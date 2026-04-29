@@ -6310,7 +6310,7 @@ renderRecordsContent();
 render2026Fixtures();
 render();
 
-$("#season").addEventListener("change", e => { state.season = e.target.value === "all" ? "all" : Number(e.target.value); render(); });
+$("#season").addEventListener("change", e => { const v = e.target.value; state.season = v === "all" ? "all" : (/^\d+$/.test(v) ? Number(v) : v); render(); });
 $("#nat").addEventListener("change", e => { state.nat = e.target.value; render(); });
 $("#search").addEventListener("input", e => { state.search = e.target.value; render(); });
 $("#qual-only").addEventListener("change", e => { state.qualOnly = e.target.checked; render(); });
@@ -6324,4 +6324,4 @@ document.querySelectorAll(".seg-btn[data-scoring]").forEach(btn => {
 </script>
 </body>
 </html>
-dd 2010 Ashes Tour mini-season + fix Match 2 stats
+2010 Ashes Tour Update
