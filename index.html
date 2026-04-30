@@ -6023,9 +6023,15 @@ function renderCommitteeTab(c) {
 }
 
 function renderNLLTab(c) {
-  // Build current season NLL table from fixtures
-  const latestSeason = Math.max(...Object.keys(DATA.fixtures).map(Number));
-  const fx = DATA.fixtures[latestSeason] || [];
+  // Build current season NLL table from fixtures.
+  // Object.keys(DATA.fixtures) may include string keys like "2010 Ashes Tour" — coerce
+  // via parseInt and discard NaN before taking the max.
+  const fixtureYears = Object.keys(DATA.fixtures)
+    .map(k => parseInt(k, 10))
+    .filter(n => !isNaN(n));
+  const latestSeason = Math.max(...fixtureYears);
+  // Use only the canonical numeric-year fixtures (skip mini-seasons like the Ashes tour)
+  const fx = DATA.fixtures[String(latestSeason)] || DATA.fixtures[latestSeason] || [];
   const byOpp = new Map();
   let nepoW = 0, nepoL = 0, nepoT = 0, nepoD = 0;
   fx.forEach(f => {
@@ -6043,8 +6049,9 @@ function renderNLLTab(c) {
     ...[...byOpp.values()].map(r => ({...r, pts: r.w*2 + r.t*1 + r.d*0.7}))
   ].sort((a,b) => b.pts - a.pts);
 
+  // Previous winners list: from latestSeason back to 1980
   const years = [];
-  for (let y = 2025; y >= 1980; y--) years.push(y);
+  for (let y = latestSeason; y >= 1980; y--) years.push(y);
 
   c.innerHTML = `
     <div class="records-tab-head">
