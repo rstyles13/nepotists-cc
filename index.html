@@ -547,7 +547,7 @@
     <div class="numbers-grid">
 
       <div class="num-cell">
-        <div class="num-value">530</div>
+        <div class="num-value">554</div>
         <div>
           <div class="num-label">Nepos</div>
           <div class="num-sub">Unique players, 2000–present</div>
@@ -573,13 +573,13 @@
         <div class="num-value">57<span class="suffix">%</span></div>
         <div>
           <div class="num-label">Win rate</div>
-          <div class="num-sub">257W / 160L / 33D · 450 played</div>
+          <div class="num-sub">258W / 162L / 34D · 454 played</div>
         </div>
       </div>
 
       <div class="num-cell">
         <div class="num-value dual">
-          <span>81,066</span><span class="sep">/</span><span>3,463</span>
+          <span>82,076</span><span class="sep">/</span><span>3,524</span>
         </div>
         <div>
           <div class="num-label">Runs &amp; Wickets</div>
@@ -588,13 +588,7 @@
       </div>
 
       <div class="num-cell" style="min-height: 220px;">
-        <div class="caps-list">
-          <div class="caps-row"><span class="caps-name"><span class="rank">1</span>Werren, S</span><span class="caps-num">396</span></div>
-          <div class="caps-row"><span class="caps-name"><span class="rank">2</span>Hoar, C</span><span class="caps-num">298</span></div>
-          <div class="caps-row"><span class="caps-name"><span class="rank">3</span>Hardy, T</span><span class="caps-num">138</span></div>
-          <div class="caps-row"><span class="caps-name"><span class="rank">4</span>Styles, R</span><span class="caps-num">125</span></div>
-          <div class="caps-row"><span class="caps-name"><span class="rank">5</span>Dale, C</span><span class="caps-num">118</span></div>
-        </div>
+        <div class="caps-list" id="top-caps-list"></div>
         <div>
           <div class="num-label">Top 5 caps</div>
           <div class="num-sub">Appearances, 2000–26</div>
@@ -618,7 +612,7 @@
       </div>
 
       <div class="num-cell">
-        <div class="num-value">450</div>
+        <div class="num-value">454</div>
         <div>
           <div class="num-label">Matches played</div>
           <div class="num-sub">Across 26 seasons</div>
@@ -782,16 +776,16 @@ const DATA = {
   batting: {
     2000: [
       {p:"JACKSON, Bruce",n:"AUS",pl:8,inn:8,no:2,runs:293,hs:89,hsNO:true,ave:48.83,q:false,f50:2},
-      {p:"MONK, Roly",n:"ENG",pl:8,inn:8,no:2,runs:270,hs:125,hsNO:false,ave:45,q:false,f50:1,f100:1},
+      {p:"MONK, Roly",n:"ENG",pl:9,inn:8,no:2,runs:270,hs:125,hsNO:false,ave:45,q:false,f50:1,f100:1},
       {p:"SUTTON, Richard",n:"ENG",pl:12,inn:12,no:2,runs:377,hs:68,hsNO:false,ave:37.7,q:true,f50:3},
       {p:"LECKENBY, Chris",n:"ENG",pl:9,inn:9,no:1,runs:236,hs:71,hsNO:false,ave:29.5,q:false,f50:2},
       {p:"MALCOLM, Skander",n:"ENG",pl:5,inn:5,no:0,runs:143,hs:96,hsNO:false,ave:28.6,q:false,f50:1},
       {p:"STOCKS, David",n:"ENG",pl:12,inn:12,no:1,runs:290,hs:70,hsNO:false,ave:26.36,q:true,f50:1},
       {p:"CARTHEW, Tim",n:"ENG",pl:13,inn:13,no:2,runs:243,hs:62,hsNO:true,ave:22.09,q:true,f50:1},
       {p:"WERREN, Steve",n:"AUS",pl:11,inn:11,no:0,runs:237,hs:112,hsNO:false,ave:21.55,q:true,f100:1},
-      {p:"TRLIN, Alex",n:"AUS",pl:4,inn:4,no:0,runs:66,hs:58,hsNO:false,ave:16.5,q:false,f50:1},
-      {p:"O'HARA, Hamish",n:"AUS",pl:10,inn:10,no:4,runs:93,hs:43,hsNO:false,ave:15.5,q:true},
-      {p:"DALE, Colin",n:"AUS",pl:6,inn:6,no:2,runs:22,hs:16,hsNO:false,ave:5.5,q:false},
+      {p:"TRLIN, Alex",n:"AUS",pl:10,inn:4,no:0,runs:66,hs:58,hsNO:false,ave:16.5,q:false,f50:1},
+      {p:"O'HARA, Hamish",n:"AUS",pl:15,inn:10,no:4,runs:93,hs:43,hsNO:false,ave:15.5,q:true},
+      {p:"DALE, Colin",n:"AUS",pl:14,inn:6,no:2,runs:22,hs:16,hsNO:false,ave:5.5,q:false},
       {p:"LAWES, Graham",n:"ENG",pl:2,inn:2,no:0,runs:100,hs:75,hsNO:false,ave:50,q:false,f50:1},
       {p:"ROSS-HURST, Chris",n:"ENG",pl:4,inn:4,no:2,runs:85,hs:26,hsNO:true,ave:42.5,q:false},
       {p:"CHALLINOR, Phillip",n:"ENG",pl:4,inn:4,no:2,runs:77,hs:35,hsNO:true,ave:38.5,q:false},
@@ -799,14 +793,14 @@ const DATA = {
       {p:"L'OSTE-BROWN, Robin",n:"ENG",pl:1,inn:1,no:0,runs:29,hs:29,hsNO:false,ave:29,q:false},
       {p:"HARDY, Tim",n:"ENG",pl:3,inn:3,no:2,runs:22,hs:15,hsNO:true,ave:22,q:false},
       {p:"HALEY, Peter",n:"ENG",pl:2,inn:2,no:0,runs:36,hs:25,hsNO:false,ave:18,q:false},
-      {p:"MOULDS, Darren",n:"ENG",pl:5,inn:5,no:2,runs:40,hs:18,hsNO:false,ave:13.33,q:false},
+      {p:"MOULDS, Darren",n:"ENG",pl:7,inn:5,no:2,runs:40,hs:18,hsNO:false,ave:13.33,q:false},
       {p:"EXLEY, Mark",n:"ENG",pl:1,inn:1,no:0,runs:12,hs:12,hsNO:false,ave:12,q:false},
       {p:"LENNON, Peter",n:"ENG",pl:1,inn:1,no:0,runs:9,hs:9,hsNO:false,ave:9,q:false},
       {p:"NELSON, R",n:"?",pl:1,inn:1,no:0,runs:8,hs:8,hsNO:false,ave:8,q:false},
-      {p:"ANDREW, Rick",n:"ENG",pl:6,inn:6,no:4,runs:13,hs:7,hsNO:false,ave:6.5,q:false},
-      {p:"ANTHONY, Keith",n:"?",pl:5,inn:5,no:2,runs:10,hs:5,hsNO:false,ave:3.33,q:false},
+      {p:"ANDREW, Rick",n:"ENG",pl:15,inn:6,no:4,runs:13,hs:7,hsNO:false,ave:6.5,q:false},
+      {p:"ANTHONY, Keith",n:"?",pl:8,inn:5,no:2,runs:10,hs:5,hsNO:false,ave:3.33,q:false},
       {p:"STAMPER, Allan",n:"ENG",pl:3,inn:3,no:0,runs:8,hs:5,hsNO:false,ave:2.67,q:false},
-      {p:"ROBINSON, Mark",n:"ENG",pl:1,inn:1,no:0,runs:1,hs:1,hsNO:false,ave:1,q:false},
+      {p:"ROBINSON, Mark",n:"ENG",pl:3,inn:1,no:0,runs:1,hs:1,hsNO:false,ave:1,q:false},
       {p:"ELLIS, Duncan",n:"ENG",pl:1,inn:1,no:0,runs:0,hs:0,hsNO:false,ave:0,q:false},
     ],
     2001: [
@@ -1546,35 +1540,39 @@ const DATA = {
       {p:"MEDCALF, William",n:"AUS",pl:1,inn:0,no:0,runs:0,hs:0,hsNO:false,ave:0,q:false},
     ],
     2017: [
-      {p:"PRICE, Richard",n:"NZ",pl:15,inn:15,no:2,runs:817,hs:162,hsNO:false,ave:62.8,q:true,f50:6,f100:2},
-      {p:"HOAR, Carl",n:"ENG",pl:13,inn:13,no:2,runs:523,hs:115,hsNO:false,ave:47.5,q:true,f50:4,f100:1},
-      {p:"STYLES, Ryan",n:"AUS",pl:15,inn:11,no:1,runs:329,hs:89,hsNO:false,ave:32.9,q:true,f50:1},
-      {p:"MASON, Jim",n:"AUS",pl:11,inn:11,no:2,runs:255,hs:79,hsNO:false,ave:28.3,q:true,f50:1},
-      {p:"SHELDON, Mike",n:"AUS",pl:12,inn:9,no:3,runs:173,hs:60,hsNO:false,ave:28.8,q:true,f50:1},
-      {p:"WERREN, Steve",n:"AUS",pl:13,inn:10,no:3,runs:152,hs:35,hsNO:false,ave:21.7,q:true},
-      {p:"ROBINSON, Ben",n:"ENG",pl:10,inn:6,no:1,runs:104,hs:34,hsNO:false,ave:20.8,q:true},
-      {p:"PILLAY, Viv",n:"SA",pl:8,inn:5,no:1,runs:84,hs:62,hsNO:false,ave:21,q:false,f50:1},
-      {p:"THAKKER, Sanjay",n:"IND",pl:6,inn:5,no:2,runs:67,hs:27,hsNO:false,ave:22.3,q:false},
-      {p:"LOGAN, Mark",n:"NZ",pl:3,inn:3,no:0,runs:61,hs:25,hsNO:false,ave:20.3,q:false},
-      {p:"HARDY, Tim",n:"ENG",pl:6,inn:6,no:0,runs:53,hs:23,hsNO:false,ave:8.8,q:true},
-      {p:"McLOGHLIN, Mick",n:"AUS",pl:4,inn:4,no:0,runs:46,hs:23,hsNO:false,ave:11.5,q:false},
-      {p:"GRIEVE, Nick",n:"NZ",pl:9,inn:6,no:1,runs:41,hs:20,hsNO:false,ave:8.2,q:true},
-      {p:"SPARROW, Luke",n:"AUS",pl:14,inn:6,no:4,runs:29,hs:19,hsNO:false,ave:14.5,q:false},
+      {p:"PRICE, Richard",n:"NZ",pl:19,inn:19,no:3,runs:910,hs:162,hsNO:false,ave:56.88,q:true,f50:6,f100:2},
+      {p:"HOAR, Carl",n:"ENG",pl:17,inn:17,no:3,runs:760,hs:115,hsNO:false,ave:54.29,q:true,f50:4,f100:2},
+      {p:"MASON, Jim",n:"AUS",pl:16,inn:15,no:3,runs:372,hs:79,hsNO:false,ave:31,q:true,f50:1},
+      {p:"STYLES, Ryan",n:"AUS",pl:18,inn:12,no:1,runs:329,hs:89,hsNO:false,ave:29.91,q:true,f50:1},
+      {p:"WERREN, Steve",n:"AUS",pl:16,inn:11,no:3,runs:200,hs:45,hsNO:false,ave:25,q:true},
+      {p:"SHELDON, Mike",n:"AUS",pl:14,inn:10,no:3,runs:174,hs:60,hsNO:false,ave:24.86,q:true,f50:1},
+      {p:"ROBINSON, Ben",n:"ENG",pl:13,inn:8,no:1,runs:169,hs:55,hsNO:false,ave:24.14,q:true,f50:1},
+      {p:"GRIEVE, Nick",n:"NZ",pl:12,inn:8,no:2,runs:122,hs:61,hsNO:false,ave:20.33,q:true,f50:1},
+      {p:"PILLAY, Viv",n:"SA",pl:10,inn:7,no:2,runs:111,hs:62,hsNO:false,ave:22.2,q:true,f50:1},
+      {p:"HARDY, Tim",n:"ENG",pl:9,inn:7,no:0,runs:107,hs:54,hsNO:false,ave:15.29,q:false,f50:1},
+      {p:"THAKKER, Sanjay",n:"IND",pl:9,inn:6,no:2,runs:98,hs:31,hsNO:false,ave:24.5,q:false},
+      {p:"McLOGHLIN, Mick",n:"AUS",pl:8,inn:6,no:0,runs:92,hs:30,hsNO:false,ave:15.33,q:false},
+      {p:"LOGAN, Mark",n:"NZ",pl:3,inn:3,no:0,runs:61,hs:25,hsNO:false,ave:20.33,q:false},
+      {p:"MONK, Roly",n:"ENG",pl:1,inn:1,no:0,runs:34,hs:34,hsNO:false,ave:34,q:false},
+      {p:"SPARROW, Luke",n:"AUS",pl:19,inn:6,no:4,runs:29,hs:19,hsNO:false,ave:14.5,q:true},
       {p:"PHELAN, Jack",n:"NZ",pl:3,inn:3,no:1,runs:23,hs:18,hsNO:false,ave:11.5,q:false},
+      {p:"HOEY, Ryan",n:"AUS",pl:5,inn:4,no:1,runs:19,hs:13,hsNO:false,ave:6.33,q:false},
       {p:"SPENCER, Graeme",n:"ENG",pl:1,inn:1,no:0,runs:18,hs:18,hsNO:false,ave:18,q:false},
       {p:"TAMBLING, Damian",n:"ZIM",pl:1,inn:1,no:1,runs:16,hs:16,hsNO:false,ave:16,q:false},
       {p:"McCUBBIN, Paul",n:"AUS",pl:2,inn:2,no:0,runs:13,hs:8,hsNO:false,ave:6.5,q:false},
+      {p:"DELROY",n:"IND",pl:1,inn:1,no:0,runs:13,hs:13,hsNO:false,ave:13,q:false},
+      {p:"DALE, Colin",n:"AUS",pl:2,inn:2,no:1,runs:11,hs:9,hsNO:false,ave:11,q:false},
       {p:"AHMAD, Danyal",n:"PAK",pl:3,inn:2,no:0,runs:10,hs:7,hsNO:false,ave:5,q:false},
-      {p:"DALE, Colin",n:"AUS",pl:1,inn:1,no:0,runs:9,hs:9,hsNO:false,ave:9,q:false},
-      {p:"HOEY, Ryan",n:"AUS",pl:3,inn:3,no:0,runs:6,hs:4,hsNO:false,ave:2,q:false},
-      {p:"BELL, Colin",n:"NI",pl:1,inn:1,no:0,runs:4,hs:4,hsNO:false,ave:4,q:false},
+      {p:"BALDEN, Bruce",n:"ENG",pl:1,inn:1,no:0,runs:4,hs:4,hsNO:false,ave:4,q:false},
+      {p:"BELL, Colin",n:"ENG",pl:1,inn:1,no:0,runs:4,hs:4,hsNO:false,ave:4,q:false},
       {p:"HEADING, Mitch",n:"AUS",pl:3,inn:2,no:0,runs:3,hs:2,hsNO:false,ave:1.5,q:false},
+      {p:"KEEP, Courtney",n:"NZ",pl:3,inn:2,no:0,runs:2,hs:1,hsNO:false,ave:1,q:false},
       {p:"FORD, Terrence",n:"ENG",pl:1,inn:1,no:0,runs:2,hs:2,hsNO:false,ave:2,q:false},
-      {p:"KEEP, Courtney",n:"NZ",pl:2,inn:1,no:0,runs:1,hs:1,hsNO:false,ave:1,q:false},
+      {p:"GILLIAN, Kahuna",n:"ENG",pl:4,inn:2,no:0,runs:1,hs:1,hsNO:false,ave:0.5,q:false},
       {p:"FRENCH, Chris",n:"AUS",pl:1,inn:1,no:1,runs:1,hs:1,hsNO:false,ave:1,q:false},
-      {p:"GILLIAN, Kahuna",n:"ENG",pl:3,inn:2,no:0,runs:1,hs:1,hsNO:false,ave:0.5,q:false},
-      {p:"PARILLON, Matt",n:"ENG",pl:1,inn:0,no:0,runs:0,hs:0,hsNO:false,ave:0,q:false},
+      {p:"LEARMONT, Scott",n:"AUS",pl:1,inn:0,no:0,runs:0,hs:0,hsNO:false,ave:0,q:false},
       {p:"MEDCALF, William",n:"AUS",pl:1,inn:0,no:0,runs:0,hs:0,hsNO:false,ave:0,q:false},
+      {p:"PARILLON, Matt",n:"ENG",pl:1,inn:0,no:0,runs:0,hs:0,hsNO:false,ave:0,q:false},
     ],
     2018: [
       {p:"HOAR, Carl",n:"ENG",pl:14,inn:14,no:3,runs:698,hs:132,hsNO:false,ave:63.5,q:true,f50:5,f100:2},
@@ -1940,38 +1938,68 @@ const DATA = {
       {p:"TATE, Patch",n:"ENG",pl:1,inn:0,no:0,runs:0,hs:0,hsNO:false,ave:0,q:false},
     ],
     2025: [
-      {p:"McQUIN, James",n:"ENG",pl:8,inn:8,no:2,runs:374,hs:105,hsNO:false,ave:62.3,q:true,f50:3,f100:1},
-      {p:"SNAITH, Lachie",n:"AUS",pl:10,inn:9,no:3,runs:199,hs:66,hsNO:true,ave:33.2,q:true,f50:2},
-      {p:"DANN, Kye",n:"AUS",pl:14,inn:14,no:3,runs:332,hs:67,hsNO:false,ave:30.2,q:true,f50:1},
-      {p:"HOAR, Carl",n:"ENG",pl:14,inn:14,no:0,runs:372,hs:88,hsNO:false,ave:26.6,q:true,f50:3},
-      {p:"BALOCH, Ali",n:"PAK",pl:19,inn:19,no:1,runs:467,hs:77,hsNO:false,ave:25.9,q:true,f50:2},
-      {p:"STYLES, Ryan",n:"AUS",pl:11,inn:9,no:2,runs:135,hs:49,hsNO:false,ave:19.3,q:true},
-      {p:"GIDWANI, Karan",n:"NZ",pl:8,inn:8,no:3,runs:62,hs:37,hsNO:true,ave:12.4,q:true},
-      {p:"SEUREN, Isaac",n:"AUS",pl:17,inn:7,no:0,runs:78,hs:30,hsNO:false,ave:11.1,q:true},
-      {p:"PHELAN, Jack",n:"NZ",pl:9,inn:8,no:1,runs:41,hs:18,hsNO:false,ave:5.9,q:true},
-      {p:"JENKINS, Jacob",n:"NZ",pl:11,inn:9,no:2,runs:35,hs:23,hsNO:false,ave:5,q:true},
-      {p:"PANNOWITZ, Matthew",n:"AUS",pl:8,inn:6,no:0,runs:22,hs:20,hsNO:false,ave:3.7,q:true},
+      {p:"BALOCH, Ali",n:"PAK",pl:19,inn:19,no:1,runs:467,hs:77,hsNO:false,ave:25.94,q:true,f50:3},
+      {p:"McQUIN, James",n:"ENG",pl:9,inn:8,no:2,runs:374,hs:105,hsNO:false,ave:62.33,q:false,f50:4,f100:1},
+      {p:"HOAR, Carl",n:"ENG",pl:14,inn:14,no:0,runs:372,hs:88,hsNO:false,ave:26.57,q:true,f50:2},
+      {p:"DANN, Kye",n:"AUS",pl:14,inn:14,no:3,runs:332,hs:67,hsNO:false,ave:30.18,q:true,f50:1},
+      {p:"BROWN, Tom",n:"NZ",pl:6,inn:6,no:2,runs:239,hs:58,hsNO:false,ave:59.75,q:false,f50:1},
+      {p:"SNAITH, Lachie",n:"AUS",pl:10,inn:9,no:3,runs:199,hs:66,hsNO:true,ave:33.17,q:true,f50:1},
       {p:"GENT, Harry",n:"ENG",pl:1,inn:1,no:0,runs:149,hs:149,hsNO:false,ave:149,q:false,f100:1},
+      {p:"GRIMSTONE, Mitch",n:"NZ",pl:4,inn:4,no:1,runs:148,hs:72,hsNO:true,ave:49.33,q:false,f50:1},
+      {p:"STYLES, Ryan",n:"AUS",pl:12,inn:9,no:2,runs:135,hs:49,hsNO:false,ave:19.29,q:true},
+      {p:"CHRISTOPHER, Lachie",n:"AUS",pl:3,inn:3,no:0,runs:99,hs:55,hsNO:false,ave:33,q:false,f50:1},
+      {p:"SEUREN, Isaac",n:"AUS",pl:18,inn:7,no:0,runs:78,hs:30,hsNO:false,ave:11.14,q:true},
       {p:"PRESTON, Dalyn",n:"AUS",pl:3,inn:2,no:1,runs:72,hs:54,hsNO:true,ave:72,q:false,f50:1},
-      {p:"BROWN, Tom",n:"NZ",pl:6,inn:6,no:2,runs:239,hs:58,hsNO:false,ave:59.8,q:false,f50:2},
-      {p:"GRIMSTONE, Mitch",n:"NZ",pl:4,inn:4,no:1,runs:148,hs:72,hsNO:true,ave:49.3,q:false,f50:1},
+      {p:"THACKER, Nilesh",n:"IND",pl:3,inn:3,no:1,runs:67,hs:52,hsNO:true,ave:33.5,q:false,f50:1},
+      {p:"GIDWANI, Karan",n:"NZ",pl:8,inn:8,no:3,runs:62,hs:37,hsNO:true,ave:12.4,q:false},
+      {p:"TONN, Ash",n:"AUS",pl:6,inn:5,no:1,runs:51,hs:17,hsNO:false,ave:12.75,q:false},
       {p:"MARKWICK, Scott",n:"AUS",pl:1,inn:1,no:0,runs:48,hs:48,hsNO:false,ave:48,q:false},
       {p:"CULLEY, James",n:"NZ",pl:2,inn:1,no:1,runs:45,hs:45,hsNO:true,ave:45,q:false},
       {p:"HAYES, Kyle",n:"AUS",pl:2,inn:2,no:1,runs:42,hs:29,hsNO:true,ave:42,q:false},
-      {p:"THACKER, Nilesh",n:"IND",pl:3,inn:3,no:1,runs:67,hs:52,hsNO:true,ave:33.5,q:false,f50:1},
-      {p:"CHRISTOPHER, Lachie",n:"AUS",pl:3,inn:3,no:0,runs:99,hs:55,hsNO:false,ave:33,q:false,f50:1},
-      {p:"GOLDSPRING, Ryan",n:"AUS",pl:3,inn:2,no:0,runs:30,hs:22,hsNO:false,ave:15,q:false},
-      {p:"TONN, Ash",n:"AUS",pl:6,inn:5,no:1,runs:51,hs:17,hsNO:false,ave:12.8,q:false},
-      {p:"POVERELLO, Marc",n:"SA",pl:3,inn:3,no:1,runs:23,hs:15,hsNO:true,ave:11.5,q:false},
-      {p:"WERREN, Steve",n:"AUS",pl:12,inn:6,no:3,runs:22,hs:12,hsNO:true,ave:7.3,q:false},
-      {p:"CHAFFEY, Karrick",n:"NZ",pl:4,inn:2,no:0,runs:11,hs:7,hsNO:false,ave:5.5,q:false},
-      {p:"IMRIE, Gavin",n:"SCO",pl:8,inn:5,no:2,runs:14,hs:13,hsNO:false,ave:4.7,q:false},
-      {p:"SHAIK, Ali",n:"UAE",pl:1,inn:1,no:0,runs:31,hs:31,hsNO:false,ave:31,q:false},
-      {p:"VALOB, Deepesh",n:"AUS",pl:1,inn:1,no:0,runs:23,hs:23,hsNO:false,ave:23,q:false},
+      {p:"PHELAN, Jack",n:"NZ",pl:9,inn:8,no:1,runs:41,hs:18,hsNO:false,ave:5.86,q:false},
+      {p:"JENKINS, Jacob",n:"NZ",pl:12,inn:9,no:2,runs:35,hs:23,hsNO:false,ave:5,q:true},
       {p:"SRIPRAGASAN, Vithu",n:"AUS",pl:1,inn:1,no:0,runs:32,hs:32,hsNO:false,ave:32,q:false},
-      {p:"DALE, Colin",n:"AUS",pl:6,inn:2,no:2,runs:0,hs:0,hsNO:true,ave:0,q:false},
-      {p:"CARTER, Jonathan",n:"AUS",pl:2,inn:1,no:0,runs:0,hs:0,hsNO:false,ave:0,q:false},
+      {p:"SHAIK, Ali",n:"UAE",pl:1,inn:1,no:0,runs:31,hs:31,hsNO:false,ave:31,q:false},
+      {p:"GOLDSPRING, Ryan",n:"AUS",pl:3,inn:2,no:0,runs:30,hs:22,hsNO:false,ave:15,q:false},
+      {p:"POVERELLO, Marc",n:"SA",pl:3,inn:3,no:1,runs:23,hs:15,hsNO:true,ave:11.5,q:false},
+      {p:"VALOB, Deepesh",n:"AUS",pl:1,inn:1,no:0,runs:23,hs:23,hsNO:false,ave:23,q:false},
+      {p:"PANNOWITZ, Matthew",n:"AUS",pl:9,inn:6,no:0,runs:22,hs:20,hsNO:false,ave:3.67,q:false},
+      {p:"WERREN, Steve",n:"AUS",pl:13,inn:6,no:3,runs:22,hs:12,hsNO:true,ave:7.33,q:true},
+      {p:"PRICE, Rich",n:"NZ",pl:3,inn:2,no:0,runs:19,hs:19,hsNO:false,ave:9.5,q:false},
+      {p:"RYAN, Mick",n:"AUS",pl:1,inn:1,no:0,runs:15,hs:15,hsNO:false,ave:15,q:false},
+      {p:"TATE, Patch",n:"ENG",pl:1,inn:1,no:0,runs:15,hs:15,hsNO:false,ave:15,q:false},
+      {p:"IMRIE, Gavin",n:"SCO",pl:9,inn:5,no:2,runs:14,hs:13,hsNO:false,ave:4.67,q:false},
+      {p:"BRITZ, Matt",n:"SA",pl:1,inn:1,no:0,runs:13,hs:13,hsNO:false,ave:13,q:false},
+      {p:"EVANS, Dan",n:"ENG",pl:1,inn:1,no:0,runs:13,hs:13,hsNO:false,ave:13,q:false},
+      {p:"SHAH, A",n:"IND",pl:1,inn:1,no:0,runs:12,hs:12,hsNO:false,ave:12,q:false},
+      {p:"CHAFFEY, Karrick",n:"NZ",pl:4,inn:2,no:0,runs:11,hs:7,hsNO:false,ave:5.5,q:false},
+      {p:"MOISIN",n:"IND",pl:1,inn:1,no:1,runs:11,hs:11,hsNO:true,ave:11,q:false},
+      {p:"BALDEN, Harry",n:"ENG",pl:2,inn:2,no:0,runs:7,hs:7,hsNO:false,ave:3.5,q:false},
+      {p:"BASHEER, Ameen",n:"PAK",pl:1,inn:1,no:0,runs:7,hs:7,hsNO:false,ave:7,q:false},
+      {p:"PRINT, Ben",n:"ENG",pl:2,inn:1,no:0,runs:6,hs:6,hsNO:false,ave:6,q:false},
+      {p:"RAMJEE, Vivek",n:"AUS",pl:1,inn:1,no:0,runs:5,hs:5,hsNO:false,ave:5,q:false},
+      {p:"SULLIVAN, Cameron",n:"NZ",pl:1,inn:1,no:0,runs:5,hs:5,hsNO:false,ave:5,q:false},
       {p:"THORNLEY, Travis",n:"AUS",pl:2,inn:2,no:1,runs:4,hs:3,hsNO:false,ave:4,q:false},
+      {p:"DILLON, Geoff",n:"AUS",pl:1,inn:1,no:0,runs:4,hs:4,hsNO:false,ave:4,q:false},
+      {p:"RHODES, Jonathan",n:"AUS",pl:1,inn:1,no:1,runs:4,hs:4,hsNO:true,ave:4,q:false},
+      {p:"PHELAN, Connor",n:"NZ",pl:1,inn:1,no:0,runs:2,hs:2,hsNO:false,ave:2,q:false},
+      {p:"CAVANAGH, Scott",n:"AUS",pl:1,inn:1,no:0,runs:1,hs:1,hsNO:false,ave:1,q:false},
+      {p:"CLEMENT, Jeremey",n:"NZ",pl:1,inn:1,no:0,runs:1,hs:1,hsNO:false,ave:1,q:false},
+      {p:"CROOKE, Paul",n:"NZ",pl:1,inn:1,no:0,runs:1,hs:1,hsNO:false,ave:1,q:false},
+      {p:"KUPPADAKATH, Vivek",n:"AUS",pl:1,inn:1,no:0,runs:1,hs:1,hsNO:false,ave:1,q:false},
+      {p:"SHINGADIA, Sahil",n:"IND",pl:1,inn:1,no:0,runs:1,hs:1,hsNO:false,ave:1,q:false},
+      {p:"DALE, Colin",n:"AUS",pl:6,inn:2,no:2,runs:0,hs:0,hsNO:true,ave:0,q:false},
+      {p:"ALLAM, Arib",n:"ENG",pl:1,inn:1,no:0,runs:0,hs:0,hsNO:false,ave:0,q:false},
+      {p:"ARAVINTHAN, Vis",n:"AUS",pl:1,inn:1,no:0,runs:0,hs:0,hsNO:false,ave:0,q:false},
+      {p:"CARTER, Jonathan",n:"AUS",pl:2,inn:1,no:0,runs:0,hs:0,hsNO:false,ave:0,q:false},
+      {p:"MEHTA, Anooj",n:"ENG",pl:2,inn:1,no:0,runs:0,hs:0,hsNO:false,ave:0,q:false},
+      {p:"DAVIES, Matthew",n:"AUS",pl:1,inn:0,no:0,runs:0,hs:0,hsNO:false,ave:0,q:false},
+      {p:"GOODWIN, Bailey",n:"AUS",pl:1,inn:0,no:0,runs:0,hs:0,hsNO:false,ave:0,q:false},
+      {p:"McINTOSH, Sam",n:"AUS",pl:1,inn:0,no:0,runs:0,hs:0,hsNO:false,ave:0,q:false},
+      {p:"SHELDON, Mike",n:"AUS",pl:1,inn:0,no:0,runs:0,hs:0,hsNO:false,ave:0,q:false},
+      {p:"TOATELL, Martin",n:"NZ",pl:1,inn:0,no:0,runs:0,hs:0,hsNO:false,ave:0,q:false},
+      {p:"VARNEY, Paul",n:"AUS",pl:1,inn:0,no:0,runs:0,hs:0,hsNO:false,ave:0,q:false},
+      {p:"WHITING, Daniel",n:"AUS",pl:1,inn:0,no:0,runs:0,hs:0,hsNO:false,ave:0,q:false},
     ],
     2026: [
       {p:"McQUIN, James",n:"ENG",pl:2,inn:2,no:0,runs:80,hs:59,hsNO:false,ave:40,q:false,f50:1},
@@ -2004,18 +2032,18 @@ const DATA = {
       {p:"DALE, Colin",n:"AUS",pl:14,inn:14,ov:101,m:10,r:460,wk:17,sr:5.94,ec:4.55,ave:27.06,q:true},
       {p:"BLAKELY, T",n:"?",pl:2,inn:2,ov:14,m:3,r:48,wk:3,sr:4.67,ec:3.43,ave:16,q:false},
       {p:"BALDEN, Bruce",n:"ENG",pl:1,inn:1,ov:8,m:3,r:19,wk:1,sr:8,ec:2.38,ave:19,q:false},
-      {p:"CARTHEW, Tim",n:"ENG",pl:3,inn:3,ov:11,m:1,r:84,wk:4,sr:2.75,ec:7.64,ave:21,q:false},
+      {p:"CARTHEW, Tim",n:"ENG",pl:13,inn:3,ov:11,m:1,r:84,wk:4,sr:2.75,ec:7.64,ave:21,q:false},
       {p:"PONTAGUE, J",n:"?",pl:1,inn:1,ov:7,m:1,r:29,wk:1,sr:7,ec:4.14,ave:29,q:false},
       {p:"MOULDS, Darren",n:"ENG",pl:7,inn:7,ov:43,m:16,r:114,wk:3,sr:14.33,ec:2.65,ave:38,q:false},
       {p:"ROBINSON, Mark",n:"ENG",pl:3,inn:3,ov:11,m:1,r:56,wk:1,sr:11,ec:5.09,ave:56,q:false},
       {p:"MINEHAN, Mark",n:"AUS",pl:1,inn:1,ov:3,m:0,r:14,wk:0,sr:0,ec:4.67,ave:0,q:false},
-      {p:"ROSS-HURST, Chris",n:"ENG",pl:3,inn:3,ov:10,m:0,r:55,wk:0,sr:0,ec:5.5,ave:0,q:false},
+      {p:"ROSS-HURST, Chris",n:"ENG",pl:4,inn:3,ov:10,m:0,r:55,wk:0,sr:0,ec:5.5,ave:0,q:false},
     ],
     2001: [
       {p:"DALE, Colin",n:"AUS",pl:11,inn:0,ov:66,m:3,r:419,wk:23,sr:2.9,ec:6.3,ave:18.2,q:true,f5w:1},
       {p:"MONK, Roly",n:"ENG",pl:10,inn:0,ov:74,m:2,r:360,wk:19,sr:3.9,ec:4.9,ave:18.9,q:true,f5w:1},
       {p:"O'HARA, Hamish",n:"AUS",pl:11,inn:0,ov:91,m:15,r:318,wk:18,sr:5.1,ec:3.5,ave:17.7,q:true},
-      {p:"ANDREW, Rick",n:"ENG",pl:0,inn:0,ov:79.5,m:12,r:354,wk:13,sr:6.1,ec:4.5,ave:27.2,q:true},
+      {p:"ANDREW, Rick",n:"ENG",pl:10,inn:0,ov:79.5,m:12,r:354,wk:13,sr:6.1,ec:4.5,ave:27.2,q:true},
       {p:"GURNEY, Mark",n:"ENG",pl:3,inn:0,ov:38.3,m:13,r:81,wk:11,sr:3.5,ec:2.1,ave:7.4,q:false,f5w:1},
       {p:"TRLIN, Alex",n:"AUS",pl:8,inn:0,ov:78,m:21,r:248,wk:11,sr:7.1,ec:3.2,ave:22.5,q:true},
       {p:"SUTTON, Richard",n:"ENG",pl:11,inn:0,ov:58.2,m:6,r:292,wk:7,sr:8.3,ec:5,ave:41.7,q:true},
@@ -2024,21 +2052,21 @@ const DATA = {
       {p:"WILSON, Ritchie",n:"AUS",pl:1,inn:0,ov:10,m:2,r:32,wk:3,sr:3.3,ec:3.2,ave:10.7,q:false},
       {p:"LECKENBY, Chris",n:"ENG",pl:8,inn:0,ov:5,m:1,r:31,wk:2,sr:2.5,ec:6.2,ave:15.5,q:false},
       {p:"WERREN, Steve",n:"AUS",pl:14,inn:0,ov:10,m:0,r:39,wk:2,sr:5,ec:3.9,ave:19.5,q:false},
-      {p:"SCOTT, Keith",n:"ENG",pl:0,inn:0,ov:6,m:0,r:44,wk:2,sr:3,ec:7.3,ave:22,q:false},
+      {p:"SCOTT, Keith",n:"ENG",pl:2,inn:0,ov:6,m:0,r:44,wk:2,sr:3,ec:7.3,ave:22,q:false},
       {p:"MITCHELL, Jeremy",n:"ENG",pl:4,inn:0,ov:23,m:7,r:80,wk:2,sr:11.5,ec:3.5,ave:40,q:false},
       {p:"HALEY, Peter",n:"ENG",pl:2,inn:0,ov:2,m:0,r:9,wk:1,sr:2,ec:4.5,ave:9,q:false},
       {p:"ROBINSON, Ben",n:"ENG",pl:1,inn:0,ov:3,m:0,r:15,wk:1,sr:3,ec:5,ave:15,q:false},
       {p:"DITTA, Ash",n:"ENG",pl:1,inn:0,ov:3,m:0,r:17,wk:1,sr:3,ec:5.7,ave:17,q:false},
       {p:"LEVY, Gary",n:"ENG",pl:1,inn:0,ov:3,m:0,r:18,wk:1,sr:3,ec:6,ave:18,q:false},
       {p:"ANTHONY, Kieth",n:"ENG",pl:1,inn:0,ov:5,m:0,r:28,wk:1,sr:5,ec:5.6,ave:28,q:false},
-      {p:"BALDEN, Bruce",n:"ENG",pl:0,inn:0,ov:8,m:1,r:41,wk:1,sr:8,ec:5.1,ave:41,q:false},
+      {p:"BALDEN, Bruce",n:"ENG",pl:1,inn:0,ov:8,m:1,r:41,wk:1,sr:8,ec:5.1,ave:41,q:false},
       {p:"DUPOUY, Cyril",n:"FRA",pl:2,inn:0,ov:8,m:0,r:70,wk:1,sr:8,ec:8.8,ave:70,q:false},
-      {p:"ANDREW, Thomas",n:"ENG",pl:0,inn:0,ov:1,m:1,r:0,wk:1,sr:1,ec:0,ave:0,q:false},
+      {p:"ANDREW, Thomas",n:"ENG",pl:1,inn:0,ov:1,m:1,r:0,wk:1,sr:1,ec:0,ave:0,q:false},
       {p:"HAYES, Buddy",n:"ENG",pl:1,inn:0,ov:0.5,m:1,r:0,wk:1,sr:0.5,ec:0,ave:0,q:false},
       {p:"ELLIS, Duncan",n:"ENG",pl:5,inn:0,ov:0.3,m:1,r:0,wk:1,sr:0.3,ec:0,ave:0,q:false},
       {p:"ELLIOT, Ron",n:"SCO",pl:1,inn:0,ov:6,m:0,r:21,wk:0,sr:0,ec:3.5,ave:0,q:false},
       {p:"SMITH, Bertram",n:"ENG",pl:1,inn:0,ov:6,m:0,r:23,wk:0,sr:0,ec:3.8,ave:0,q:false},
-      {p:"WORRELL, Kenny",n:"ENG",pl:0,inn:0,ov:3,m:0,r:17,wk:0,sr:0,ec:5.7,ave:0,q:false},
+      {p:"WORRELL, Kenny",n:"ENG",pl:1,inn:0,ov:3,m:0,r:17,wk:0,sr:0,ec:5.7,ave:0,q:false},
       {p:"THAIN, Ross",n:"NZ",pl:1,inn:0,ov:3,m:0,r:18,wk:0,sr:0,ec:6,ave:0,q:false},
       {p:"BROWN, Alex L'Oste",n:"ENG",pl:1,inn:0,ov:2,m:0,r:12,wk:0,sr:0,ec:6,ave:0,q:false},
       {p:"BROWN, Robin L'Oste",n:"ENG",pl:2,inn:0,ov:2,m:0,r:14,wk:0,sr:0,ec:7,ave:0,q:false},
@@ -2338,7 +2366,7 @@ const DATA = {
       {p:"LECKENBY, Chris",n:"ENG",pl:4,inn:0,ov:0,m:0,r:0,wk:0,sr:0,ec:0,ave:0,q:false},
       {p:"MALAKAR, Ian",n:"NEP",pl:2,inn:0,ov:3,m:0,r:28,wk:0,sr:0,ec:0,ave:0,q:false},
       {p:"OGILVIE, James",n:"AUS",pl:3,inn:0,ov:1,m:0,r:7,wk:0,sr:0,ec:0,ave:0,q:false},
-      {p:"WERREN, Steve",n:"AUS",pl:19,inn:0,ov:6,m:0,r:35,wk:0,sr:0,ec:0,ave:0,q:false},
+      {p:"WERREN, Steve",n:"AUS",pl:15,inn:0,ov:6,m:0,r:35,wk:0,sr:0,ec:0,ave:0,q:false},
     ],
     "2010 Ashes Tour": [
       {p:"DALE, Colin",n:"AUS",pl:4,inn:1,ov:12,m:2,r:95,wk:9,sr:8,ec:7.9,ave:10.56,q:false},
@@ -2360,7 +2388,7 @@ const DATA = {
       {p:"BERDON, Michael",n:"AUS",pl:1,inn:1,ov:1,m:0,r:15,wk:0,sr:0,ec:15,ave:0,q:false},
       {p:"BURKE, Matty",n:"AUS",pl:1,inn:1,ov:3,m:0,r:10,wk:0,sr:0,ec:3.3,ave:0,q:false},
       {p:"CARTHEW, Tim",n:"ENG",pl:1,inn:1,ov:2,m:0,r:12,wk:0,sr:0,ec:6,ave:0,q:false},
-      {p:"JONES, Steve",n:"ENG",pl:1,inn:1,ov:1,m:0,r:20,wk:0,sr:0,ec:20,ave:0,q:false},
+      {p:"JONES, Steve",n:"ENG",pl:3,inn:1,ov:1,m:0,r:20,wk:0,sr:0,ec:20,ave:0,q:false},
       {p:"LECKENBY, Chris",n:"ENG",pl:4,inn:1,ov:2,m:0,r:8,wk:0,sr:0,ec:4,ave:0,q:false},
       {p:"MINEHAN, Mark",n:"AUS",pl:1,inn:1,ov:3,m:0,r:14,wk:0,sr:0,ec:4.7,ave:0,q:false},
       {p:"O'NEIL, Graeme",n:"AUS",pl:1,inn:1,ov:1,m:0,r:17,wk:0,sr:0,ec:17,ave:0,q:false},
@@ -2470,7 +2498,7 @@ const DATA = {
       {p:"STOUT, Mick",n:"ENG",pl:6,inn:6,ov:26,m:1,r:188,wk:5,sr:5.2,ec:7.2,ave:37.6,q:false},
       {p:"DALE, Colin",n:"AUS",pl:3,inn:3,ov:10,m:0,r:85,wk:2,sr:5,ec:8.5,ave:42.5,q:false},
       {p:"KHANNA, Aditya",n:"IND",pl:7,inn:7,ov:18,m:2,r:92,wk:0,sr:0,ec:5.1,ave:0,q:false},
-      {p:"WHITE, John",n:"AUS",pl:1,inn:1,ov:3,m:0,r:18,wk:0,sr:0,ec:6,ave:0,q:false},
+      {p:"WHITE, John",n:"AUS",pl:2,inn:1,ov:3,m:0,r:18,wk:0,sr:0,ec:6,ave:0,q:false},
       {p:"DATTANI, Shyam",n:"ENG",pl:8,inn:8,ov:4,m:0,r:26,wk:0,sr:0,ec:6.5,ave:0,q:false},
       {p:"PILLAY, Viv",n:"SA",pl:8,inn:8,ov:15,m:0,r:109,wk:0,sr:0,ec:7.3,ave:0,q:false},
     ],
@@ -2484,7 +2512,7 @@ const DATA = {
       {p:"LEADER, Caillan",n:"AUS",pl:6,inn:0,ov:41,m:3,r:189,wk:9,sr:4.6,ec:4.6,ave:21,q:true},
       {p:"HOAR, Carl",n:"ENG",pl:17,inn:0,ov:15,m:1,r:60,wk:7,sr:2.1,ec:4,ave:8.6,q:false},
       {p:"TAMBLING, Damian",n:"ZIM",pl:3,inn:0,ov:19,m:1,r:66,wk:5,sr:3.8,ec:3.5,ave:13.2,q:false},
-      {p:"HAYDE, Alex",n:"NZ",pl:2,inn:0,ov:19,m:1,r:95,wk:5,sr:3.8,ec:5,ave:19,q:false},
+      {p:"HAYDE, Alex",n:"NZ",pl:4,inn:0,ov:19,m:1,r:95,wk:5,sr:3.8,ec:5,ave:19,q:false},
       {p:"LOGAN, Mark",n:"NZ",pl:12,inn:0,ov:23,m:1,r:110,wk:5,sr:4.6,ec:4.8,ave:22,q:false},
       {p:"PILLAY, Viv",n:"SA",pl:11,inn:0,ov:30.3,m:4,r:161,wk:5,sr:6.1,ec:5.3,ave:32.2,q:true},
       {p:"MEDCALF, William",n:"AUS",pl:1,inn:0,ov:5,m:0,r:13,wk:2,sr:2.5,ec:2.6,ave:6.5,q:false},
@@ -2529,28 +2557,29 @@ const DATA = {
       {p:"CULLEN, Andrew",n:"AUS",pl:2,inn:2,ov:8,m:0,r:68,wk:0,sr:0,ec:8.5,ave:0,q:false},
     ],
     2017: [
-      {p:"GRIEVE, Nick",n:"NZ",pl:9,inn:8,ov:48.4,m:6,r:260,wk:14,sr:3.5,ec:5.4,ave:18.6,q:true},
-      {p:"PILLAY, Viv",n:"SA",pl:8,inn:5,ov:26,m:6,r:118,wk:8,sr:3.2,ec:4.5,ave:14.8,q:false},
-      {p:"SHELDON, Mike",n:"AUS",pl:12,inn:7,ov:54,m:12,r:202,wk:8,sr:6.8,ec:3.7,ave:25.2,q:true},
-      {p:"ROBINSON, Ben",n:"ENG",pl:10,inn:4,ov:24.4,m:1,r:146,wk:6,sr:4.1,ec:6,ave:24.3,q:false},
-      {p:"AHMAD, Danyal",n:"PAK",pl:3,inn:2,ov:12,m:1,r:49,wk:4,sr:3,ec:4.1,ave:12.2,q:false},
-      {p:"SPARROW, Luke",n:"AUS",pl:14,inn:6,ov:34,m:6,r:153,wk:4,sr:8.5,ec:4.5,ave:38.2,q:true},
-      {p:"PRICE, Richard",n:"NZ",pl:15,inn:5,ov:24,m:0,r:190,wk:4,sr:6,ec:7.9,ave:47.5,q:true},
-      {p:"STYLES, Ryan",n:"AUS",pl:15,inn:7,ov:53,m:6,r:243,wk:4,sr:13.2,ec:4.6,ave:60.8,q:true},
-      {p:"McLOGHLIN, Mick",n:"AUS",pl:4,inn:2,ov:16,m:2,r:80,wk:3,sr:5.3,ec:5,ave:26.7,q:false},
-      {p:"KEEP, Courtney",n:"NZ",pl:2,inn:2,ov:12,m:0,r:66,wk:2,sr:6,ec:5.5,ave:33,q:false},
-      {p:"THAKKER, Sanjay",n:"IND",pl:6,inn:3,ov:24,m:1,r:121,wk:2,sr:12,ec:5,ave:60.5,q:false},
+      {p:"GRIEVE, Nick",n:"NZ",pl:12,inn:12,ov:69.4,m:7,r:354,wk:16,sr:4.3,ec:5.1,ave:22.12,q:true},
+      {p:"ROBINSON, Ben",n:"ENG",pl:13,inn:7,ov:41.4,m:2,r:239,wk:10,sr:4.1,ec:5.8,ave:23.9,q:true},
+      {p:"SPARROW, Luke",n:"AUS",pl:19,inn:11,ov:55.3,m:10,r:264,wk:10,sr:5.5,ec:4.8,ave:26.4,q:true},
+      {p:"PILLAY, Viv",n:"SA",pl:10,inn:8,ov:42,m:7,r:222,wk:9,sr:4.7,ec:5.3,ave:24.67,q:true},
+      {p:"PRICE, Richard",n:"NZ",pl:19,inn:11,ov:57,m:0,r:349,wk:9,sr:6.3,ec:6.1,ave:38.78,q:true},
+      {p:"SHELDON, Mike",n:"AUS",pl:14,inn:11,ov:80,m:12,r:374,wk:9,sr:8.9,ec:4.7,ave:41.56,q:true},
+      {p:"THAKKER, Sanjay",n:"IND",pl:9,inn:6,ov:45,m:5,r:202,wk:8,sr:5.6,ec:4.5,ave:25.25,q:false},
+      {p:"McLOGHLIN, Mick",n:"AUS",pl:8,inn:6,ov:46,m:5,r:225,wk:7,sr:6.6,ec:4.9,ave:32.14,q:false},
+      {p:"STYLES, Ryan",n:"AUS",pl:18,inn:13,ov:96,m:12,r:419,wk:7,sr:13.7,ec:4.4,ave:59.86,q:true},
+      {p:"AHMAD, Danyal",n:"PAK",pl:3,inn:3,ov:20,m:1,r:93,wk:4,sr:5,ec:4.7,ave:23.25,q:false},
+      {p:"MASON, Jim",n:"AUS",pl:16,inn:7,ov:29,m:1,r:170,wk:4,sr:7.2,ec:5.9,ave:42.5,q:true},
+      {p:"HOEY, Ryan",n:"AUS",pl:5,inn:2,ov:8,m:1,r:43,wk:2,sr:4,ec:5.4,ave:21.5,q:false},
+      {p:"KEEP, Courtney",n:"NZ",pl:3,inn:3,ov:19,m:2,r:114,wk:2,sr:9.5,ec:6,ave:57,q:false},
       {p:"HEADING, Mitch",n:"AUS",pl:3,inn:1,ov:1,m:0,r:11,wk:1,sr:1,ec:11,ave:11,q:false},
-      {p:"PARILLON, Matt",n:"ENG",pl:0,inn:1,ov:6,m:2,r:12,wk:1,sr:6,ec:2,ave:12,q:false},
+      {p:"PARILLON, Matt",n:"ENG",pl:1,inn:1,ov:6,m:2,r:12,wk:1,sr:6,ec:2,ave:12,q:false},
       {p:"PHELAN, Jack",n:"NZ",pl:3,inn:1,ov:3,m:0,r:19,wk:1,sr:3,ec:6.3,ave:19,q:false},
-      {p:"WERREN, Steve",n:"AUS",pl:13,inn:1,ov:5,m:1,r:23,wk:1,sr:5,ec:4.6,ave:23,q:false},
-      {p:"HOAR, Carl",n:"ENG",pl:13,inn:2,ov:3.2,m:0,r:28,wk:1,sr:3.2,ec:8.8,ave:28,q:false},
+      {p:"WERREN, Steve",n:"AUS",pl:16,inn:1,ov:5,m:1,r:23,wk:1,sr:5,ec:4.6,ave:23,q:true},
+      {p:"HOAR, Carl",n:"ENG",pl:17,inn:2,ov:3.2,m:0,r:28,wk:1,sr:3.2,ec:8.8,ave:28,q:true},
       {p:"FORD, Terrence",n:"ENG",pl:1,inn:1,ov:8,m:0,r:68,wk:1,sr:8,ec:8.5,ave:68,q:false},
+      {p:"DALE, Colin",n:"AUS",pl:2,inn:2,ov:11,m:0,r:73,wk:1,sr:11,ec:6.6,ave:73,q:false},
+      {p:"BELL, Colin",n:"ENG",pl:1,inn:1,ov:2,m:0,r:37,wk:0,sr:0,ec:18.5,ave:0,q:false},
+      {p:"LEARMONT, Scott",n:"",pl:1,inn:1,ov:0.4,m:0,r:16,wk:0,sr:0,ec:40,ave:0,q:false},
       {p:"TAMBLING, Damian",n:"ZIM",pl:1,inn:1,ov:6,m:1,r:11,wk:0,sr:0,ec:1.8,ave:0,q:false},
-      {p:"MASON, Jim",n:"AUS",pl:11,inn:3,ov:14,m:1,r:70,wk:0,sr:0,ec:5,ave:0,q:false},
-      {p:"BELL, Colin",n:"NI",pl:1,inn:1,ov:2,m:0,r:37,wk:0,sr:0,ec:18.5,ave:0,q:false},
-      {p:"SUBRAMANIAR, Siva",n:"IND",pl:1,inn:0,ov:0,m:0,r:0,wk:0,sr:0,ec:0,ave:0,q:false},
-      {p:"WHITE, John",n:"AUS",pl:1,inn:0,ov:0,m:0,r:0,wk:0,sr:0,ec:0,ave:0,q:false},
     ],
     2018: [
       {p:"MASON, Jim",n:"AUS",pl:12,inn:12,ov:64.3,m:3,r:399,wk:18,sr:3.6,ec:6.2,ave:22.2,q:true},
@@ -2820,7 +2849,7 @@ const DATA = {
       {p:"EVANS, Dan",n:"ENG",pl:1,inn:1,ov:1.7,m:0,r:3,wk:2,sr:0.8,ec:1.8,ave:1.5,q:false},
       {p:"CORRIS, Brett",n:"AUS",pl:4,inn:1,ov:1.2,m:0,r:3,wk:2,sr:0.6,ec:2.6,ave:1.5,q:false},
       {p:"DECORT, Keiren",n:"AUS",pl:1,inn:1,ov:4,m:0,r:8,wk:2,sr:2,ec:2,ave:4,q:false},
-      {p:"EVANS, Matt",n:"ENG",pl:0,inn:1,ov:5,m:1,r:12,wk:2,sr:2.5,ec:2.4,ave:6,q:false},
+      {p:"EVANS, Matt",n:"ENG",pl:1,inn:1,ov:5,m:1,r:12,wk:2,sr:2.5,ec:2.4,ave:6,q:false},
       {p:"DAWSON, Todd",n:"AUS",pl:1,inn:1,ov:4,m:1,r:14,wk:2,sr:2,ec:3.5,ave:7,q:false},
       {p:"WILSON, Connor",n:"NZ",pl:5,inn:4,ov:14,m:0,r:68,wk:2,sr:7,ec:4.9,ave:34,q:false},
       {p:"CHATTU, Hemanth",n:"IND",pl:2,inn:1,ov:2,m:0,r:13,wk:1,sr:2,ec:6.5,ave:13,q:false},
@@ -2846,39 +2875,66 @@ const DATA = {
       {p:"HOSKINS, Oli",n:"AUS",pl:2,inn:1,ov:1,m:0,r:18,wk:0,sr:0,ec:18,ave:0,q:false},
     ],
     2025: [
-      {p:"DANN, Kye",n:"AUS",pl:14,inn:10,ov:45,m:10,r:176,wk:17,sr:2.6,ec:3.9,ave:10.4,q:true,f5w:1},
-      {p:"SEUREN, Isaac",n:"AUS",pl:17,inn:18,ov:119,m:19,r:410,wk:35,sr:3.4,ec:3.4,ave:11.7,q:true},
-      {p:"SNAITH, Lachie",n:"AUS",pl:10,inn:10,ov:54.5,m:7,r:235,wk:20,sr:2.7,ec:4.3,ave:11.8,q:true,f5w:2},
-      {p:"McQUIN, James",n:"ENG",pl:8,inn:7,ov:34.2,m:3,r:154,wk:10,sr:3.4,ec:4.5,ave:15.4,q:true},
-      {p:"HOAR, Carl",n:"ENG",pl:14,inn:11,ov:43.7,m:6,r:233,wk:13,sr:3.4,ec:5.3,ave:17.9,q:true},
-      {p:"PANNOWITZ, Matthew",n:"AUS",pl:8,inn:8,ov:37.7,m:3,r:233,wk:12,sr:3.1,ec:6.2,ave:19.4,q:true},
-      {p:"BALOCH, Ali",n:"PAK",pl:19,inn:10,ov:38.8,m:1,r:244,wk:4,sr:9.7,ec:6.3,ave:61,q:true},
-      {p:"IMRIE, Gavin",n:"SCO",pl:8,inn:9,ov:49.7,m:9,r:245,wk:4,sr:12.4,ec:4.9,ave:61.3,q:true},
+      {p:"SEUREN, Isaac",n:"AUS",pl:18,inn:18,ov:119,m:19,r:410,wk:35,sr:3.4,ec:3.4,ave:11.71,q:true},
+      {p:"SNAITH, Lachie",n:"AUS",pl:10,inn:10,ov:54.5,m:7,r:235,wk:20,sr:2.7,ec:4.3,ave:11.75,q:true},
+      {p:"DANN, Kye",n:"AUS",pl:14,inn:10,ov:45,m:10,r:176,wk:17,sr:2.6,ec:3.9,ave:10.35,q:true},
+      {p:"HOAR, Carl",n:"ENG",pl:14,inn:11,ov:43.4,m:6,r:233,wk:13,sr:3.3,ec:5.4,ave:17.92,q:true},
+      {p:"PANNOWITZ, Matthew",n:"AUS",pl:9,inn:8,ov:37.4,m:3,r:233,wk:12,sr:3.1,ec:6.2,ave:19.42,q:false},
+      {p:"McQUIN, James",n:"ENG",pl:9,inn:7,ov:34.2,m:3,r:154,wk:10,sr:3.4,ec:4.5,ave:15.4,q:false},
       {p:"THACKER, Nilesh",n:"IND",pl:3,inn:3,ov:8.5,m:1,r:52,wk:5,sr:1.7,ec:6.1,ave:10.4,q:false},
-      {p:"WHITING, Daniel",n:"AUS",pl:1,inn:1,ov:8,m:3,r:26,wk:4,sr:2,ec:3.3,ave:6.5,q:false},
-      {p:"DALE, Colin",n:"AUS",pl:6,inn:5,ov:7.3,m:0,r:48,wk:4,sr:1.8,ec:6.5,ave:12,q:false},
       {p:"POVERELLO, Marc",n:"SA",pl:3,inn:3,ov:22,m:2,r:93,wk:5,sr:4.4,ec:4.2,ave:18.6,q:false},
-      {p:"JENKINS, Jacob",n:"NZ",pl:11,inn:10,ov:26.5,m:0,r:189,wk:5,sr:5.3,ec:7.1,ave:37.8,q:false},
+      {p:"JENKINS, Jacob",n:"NZ",pl:12,inn:10,ov:26.5,m:0,r:189,wk:5,sr:5.3,ec:7.1,ave:37.8,q:true},
+      {p:"WHITING, Daniel",n:"AUS",pl:1,inn:1,ov:8,m:3,r:26,wk:4,sr:2,ec:3.2,ave:6.5,q:false},
+      {p:"DALE, Colin",n:"AUS",pl:6,inn:5,ov:7.3,m:0,r:48,wk:4,sr:1.8,ec:6.6,ave:12,q:false},
+      {p:"BALOCH, Ali",n:"PAK",pl:19,inn:10,ov:38.5,m:1,r:244,wk:4,sr:9.6,ec:6.3,ave:61,q:true},
+      {p:"IMRIE, Gavin",n:"SCO",pl:9,inn:9,ov:49.4,m:9,r:245,wk:4,sr:12.3,ec:5,ave:61.25,q:false},
       {p:"PRESTON, Dalyn",n:"AUS",pl:3,inn:2,ov:5,m:0,r:45,wk:3,sr:1.7,ec:9,ave:15,q:false},
       {p:"GOODWIN, Bailey",n:"AUS",pl:1,inn:1,ov:8,m:0,r:17,wk:2,sr:4,ec:2.1,ave:8.5,q:false},
-      {p:"DILLON, Geoff",n:"AUS",pl:1,inn:1,ov:4.5,m:0,r:18,wk:2,sr:2.3,ec:4,ave:9,q:false},
+      {p:"DILLON, Geoff",n:"AUS",pl:1,inn:1,ov:4.5,m:0,r:18,wk:2,sr:2.2,ec:4,ave:9,q:false},
       {p:"MARKWICK, Scott",n:"AUS",pl:1,inn:1,ov:3,m:0,r:18,wk:2,sr:1.5,ec:6,ave:9,q:false},
       {p:"SHAIK, Ali",n:"UAE",pl:1,inn:1,ov:8,m:2,r:24,wk:2,sr:4,ec:3,ave:12,q:false},
       {p:"RHODES, Jonathan",n:"AUS",pl:1,inn:1,ov:7,m:0,r:33,wk:2,sr:3.5,ec:4.7,ave:16.5,q:false},
+      {p:"PRICE, Rich",n:"NZ",pl:3,inn:3,ov:8,m:0,r:47,wk:2,sr:4,ec:5.9,ave:23.5,q:false},
+      {p:"SULLIVAN, Cameron",n:"NZ",pl:1,inn:1,ov:7,m:0,r:57,wk:2,sr:3.5,ec:8.1,ave:28.5,q:false},
       {p:"MEHTA, Anooj",n:"ENG",pl:2,inn:2,ov:16,m:1,r:75,wk:2,sr:8,ec:4.7,ave:37.5,q:false},
-      {p:"STYLES, Ryan",n:"AUS",pl:11,inn:2,ov:6,m:0,r:29,wk:1,sr:6,ec:4.8,ave:29,q:false},
+      {p:"BRITZ, Matt",n:"SA",pl:1,inn:1,ov:0.5,m:0,r:5,wk:1,sr:0.5,ec:10,ave:5,q:false},
+      {p:"CHAFFEY, Karrick",n:"NZ",pl:4,inn:2,ov:3,m:0,r:15,wk:1,sr:3,ec:5,ave:15,q:false},
+      {p:"MOISIN",n:"IND",pl:1,inn:1,ov:4,m:0,r:17,wk:1,sr:4,ec:4.2,ave:17,q:false},
+      {p:"BALDEN, Harry",n:"ENG",pl:2,inn:1,ov:1,m:0,r:18,wk:1,sr:1,ec:18,ave:18,q:false},
+      {p:"CULLEY, James",n:"NZ",pl:2,inn:1,ov:5,m:2,r:21,wk:1,sr:5,ec:4.2,ave:21,q:false},
+      {p:"SHINGADIA, Sahil",n:"IND",pl:1,inn:1,ov:2,m:0,r:21,wk:1,sr:2,ec:10.5,ave:21,q:false},
+      {p:"VARNEY, Paul",n:"AUS",pl:1,inn:1,ov:3,m:0,r:21,wk:1,sr:3,ec:7,ave:21,q:false},
+      {p:"SHAH, A",n:"IND",pl:1,inn:1,ov:4,m:2,r:28,wk:1,sr:4,ec:7,ave:28,q:false},
+      {p:"KUPPADAKATH, Vivek",n:"AUS",pl:1,inn:1,ov:4,m:0,r:29,wk:1,sr:4,ec:7.2,ave:29,q:false},
+      {p:"STYLES, Ryan",n:"AUS",pl:12,inn:2,ov:6,m:0,r:29,wk:1,sr:6,ec:4.8,ave:29,q:true},
       {p:"CARTER, Jonathan",n:"AUS",pl:2,inn:2,ov:7,m:0,r:35,wk:1,sr:7,ec:5,ave:35,q:false},
-      {p:"THORNLEY, Travis",n:"AUS",pl:2,inn:1,ov:2,m:0,r:22,wk:0,sr:null,ec:11,ave:null,q:false},
+      {p:"PRINT, Ben",n:"ENG",pl:2,inn:2,ov:6,m:0,r:35,wk:1,sr:6,ec:5.8,ave:35,q:false},
+      {p:"ARAVINTHAN, Vis",n:"AUS",pl:1,inn:1,ov:5,m:0,r:38,wk:1,sr:5,ec:7.6,ave:38,q:false},
+      {p:"GOLDSPRING, Ryan",n:"AUS",pl:3,inn:3,ov:10.5,m:0,r:70,wk:1,sr:10.5,ec:6.7,ave:70,q:false},
+      {p:"ALLAM, Arib",n:"ENG",pl:1,inn:1,ov:3,m:0,r:17,wk:0,sr:0,ec:5.7,ave:0,q:false},
+      {p:"BROWN, Tom",n:"NZ",pl:6,inn:2,ov:3,m:0,r:19,wk:0,sr:0,ec:6.3,ave:0,q:false},
+      {p:"CAVANAGH, Scott",n:"AUS",pl:1,inn:1,ov:1,m:0,r:13,wk:0,sr:0,ec:13,ave:0,q:false},
+      {p:"CHRISTOPHER, Lachie",n:"AUS",pl:3,inn:2,ov:7,m:1,r:29,wk:0,sr:0,ec:4.1,ave:0,q:false},
+      {p:"EVANS, Dan",n:"ENG",pl:1,inn:1,ov:5,m:0,r:17,wk:0,sr:0,ec:3.4,ave:0,q:false},
+      {p:"GENT, Harry",n:"ENG",pl:1,inn:1,ov:2,m:0,r:21,wk:0,sr:0,ec:10.5,ave:0,q:false},
+      {p:"GRIMSTONE, Mitch",n:"NZ",pl:4,inn:1,ov:5,m:0,r:34,wk:0,sr:0,ec:6.8,ave:0,q:false},
+      {p:"PHELAN, Jack",n:"NZ",pl:9,inn:1,ov:1,m:0,r:14,wk:0,sr:0,ec:14,ave:0,q:false},
+      {p:"RAMJEE, Vivek",n:"AUS",pl:1,inn:1,ov:6,m:1,r:15,wk:0,sr:0,ec:2.5,ave:0,q:false},
+      {p:"SHELDON, Mike",n:"AUS",pl:1,inn:1,ov:2,m:1,r:4,wk:0,sr:0,ec:2,ave:0,q:false},
+      {p:"TATE, Patch",n:"ENG",pl:1,inn:1,ov:7.4,m:0,r:63,wk:0,sr:0,ec:8.5,ave:0,q:false},
+      {p:"THORNLEY, Travis",n:"AUS",pl:2,inn:1,ov:2,m:0,r:22,wk:0,sr:0,ec:11,ave:0,q:false},
+      {p:"TOATELL, Martin",n:"NZ",pl:1,inn:1,ov:2,m:0,r:28,wk:0,sr:0,ec:14,ave:0,q:false},
+      {p:"VALOB, Deepesh",n:"AUS",pl:1,inn:1,ov:4,m:0,r:33,wk:0,sr:0,ec:8.2,ave:0,q:false},
     ],
     2026: [
-      {p:"DANN, Kye",n:"AUS",pl:2,inn:2,ov:16,m:2,r:54,wk:6,sr:16,ec:3.4,ave:9,q:false},
-      {p:"BOND, Charlie",n:"AUS",pl:2,inn:2,ov:16,m:3,r:61,wk:3,sr:32,ec:3.8,ave:20.33,q:false},
-      {p:"BILBEY, Adam",n:"ENG",pl:1,inn:1,ov:5,m:0,r:23,wk:2,sr:15,ec:4.6,ave:11.5,q:false},
-      {p:"PANDEY, Anand",n:"IND",pl:1,inn:1,ov:4,m:0,r:39,wk:2,sr:12,ec:9.8,ave:19.5,q:false},
-      {p:"SIM, James",n:"AUS",pl:1,inn:1,ov:7,m:0,r:54,wk:2,sr:21,ec:7.7,ave:27,q:false},
-      {p:"PRESTON, Dalyn",n:"AUS",pl:1,inn:1,ov:0.1,m:0,r:0,wk:1,sr:1,ec:0,ave:0,q:false},
-      {p:"POVERELLO, Marc",n:"ENG",pl:1,inn:1,ov:2.5,m:0,r:11,wk:1,sr:17,ec:4.4,ave:11,q:false},
-      {p:"McQUIN, James",n:"ENG",pl:2,inn:2,ov:12,m:0,r:54,wk:1,sr:72,ec:4.5,ave:54,q:false},
+      {p:"DANN, Kye",n:"AUS",pl:2,inn:2,ov:16,m:2,r:54,wk:6,sr:2.7,ec:3.4,ave:9,q:false},
+      {p:"BOND, Charlie",n:"AUS",pl:2,inn:2,ov:16,m:3,r:61,wk:3,sr:5.3,ec:3.8,ave:20.33,q:false},
+      {p:"BILBEY, Adam",n:"ENG",pl:1,inn:1,ov:5,m:0,r:23,wk:2,sr:2.5,ec:4.6,ave:11.5,q:false},
+      {p:"PANDEY, Anand",n:"IND",pl:1,inn:1,ov:4,m:0,r:39,wk:2,sr:2,ec:9.8,ave:19.5,q:false},
+      {p:"SIM, James",n:"AUS",pl:1,inn:1,ov:7,m:0,r:54,wk:2,sr:3.5,ec:7.7,ave:27,q:false},
+      {p:"PRESTON, Dalyn",n:"AUS",pl:1,inn:1,ov:0.1,m:0,r:0,wk:1,sr:0.1,ec:0,ave:0,q:false},
+      {p:"POVERELLO, Marc",n:"ENG",pl:1,inn:1,ov:2.5,m:0,r:11,wk:1,sr:2.5,ec:4.4,ave:11,q:false},
+      {p:"McQUIN, James",n:"ENG",pl:2,inn:2,ov:12,m:0,r:54,wk:1,sr:12,ec:4.5,ave:54,q:false},
       {p:"McINTOSH, Sam",n:"NZ",pl:1,inn:1,ov:4,m:0,r:28,wk:0,sr:0,ec:7,ave:0,q:false},
       {p:"WILLMORE, Lachlan",n:"AUS",pl:1,inn:1,ov:3,m:0,r:18,wk:0,sr:0,ec:6,ave:0,q:false},
     ],
@@ -2910,7 +2966,7 @@ const DATA = {
       {p:"DALE, Colin",n:"AUS",pl:11,ct:4,st:0,ro:0,pts:32},
       {p:"ELLIS, Duncan",n:"ENG",pl:5,ct:4,st:0,ro:0,pts:32},
       {p:"TRLIN, Alex",n:"AUS",pl:8,ct:4,st:0,ro:0,pts:32},
-      {p:"ANDREW, Rick",n:"ENG",pl:0,ct:3,st:0,ro:0,pts:24},
+      {p:"ANDREW, Rick",n:"ENG",pl:10,ct:3,st:0,ro:0,pts:24},
       {p:"GURNEY, Mark",n:"ENG",pl:3,ct:3,st:0,ro:0,pts:24},
       {p:"LAWES, Graham",n:"ENG",pl:5,ct:3,st:0,ro:0,pts:24},
       {p:"STOCKS, David",n:"ENG",pl:14,ct:3,st:0,ro:0,pts:24},
@@ -2922,7 +2978,7 @@ const DATA = {
       {p:"O'HARA, Hamish",n:"AUS",pl:11,ct:2,st:0,ro:0,pts:16},
       {p:"ROBINSON, Mark",n:"ENG",pl:10,ct:2,st:0,ro:0,pts:16},
       {p:"GURNEY, Dave",n:"ENG",pl:3,ct:1,st:0,ro:0,pts:8},
-      {p:"MITCHELL, Jeremy",n:"ENG",pl:0,ct:1,st:0,ro:0,pts:8},
+      {p:"MITCHELL, Jeremy",n:"ENG",pl:4,ct:1,st:0,ro:0,pts:8},
       {p:"SCOTT, Keith",n:"ENG",pl:2,ct:1,st:0,ro:0,pts:8},
       {p:"STAMPER, Allan",n:"ENG",pl:4,ct:1,st:0,ro:0,pts:8},
       {p:"SUTTON, Richard",n:"ENG",pl:11,ct:1,st:0,ro:0,pts:8},
@@ -3139,7 +3195,7 @@ const DATA = {
       {p:"HARDY, Tim",n:"ENG",pl:12,ct:1,st:0,ro:0,pts:8},
       {p:"INGHAM, Troy",n:"AUS",pl:1,ct:1,st:0,ro:0,pts:8},
       {p:"NISBET, Andrew",n:"AUS",pl:5,ct:1,st:0,ro:0,pts:8},
-      {p:"PANCHAZ, Umes",n:"IND",pl:0,ct:1,st:0,ro:0,pts:8},
+      {p:"PANCHAZ, Umes",n:"IND",pl:1,ct:1,st:0,ro:0,pts:8},
       {p:"PORTER, Luke",n:"AUS",pl:1,ct:1,st:0,ro:0,pts:8},
       {p:"PRIOR, Joshua",n:"ENG",pl:5,ct:1,st:0,ro:0,pts:8},
     ],
@@ -3251,11 +3307,16 @@ const DATA = {
       {p:"THACKER, Nilesh",n:"IND",pl:15,ct:1,st:0,ro:0,pts:8},
     ],
     2017: [
-      {p:"WERREN, Steve",n:"AUS",pl:13,ct:5,st:2,ro:0,pts:64},
-      {p:"PILLAY, Viv",n:"SA",pl:8,ct:2,st:0,ro:0,pts:16},
-      {p:"PRICE, Richard",n:"NZ",pl:15,ct:1,st:0,ro:0,pts:8},
-      {p:"SPARROW, Luke",n:"AUS",pl:14,ct:1,st:0,ro:0,pts:8},
-      {p:"STYLES, Ryan",n:"AUS",pl:15,ct:0,st:0,ro:1,pts:8},
+      {p:"WERREN, Steve",n:"AUS",pl:16,ct:5,st:2,ro:0,pts:64},
+      {p:"MASON, Jim",n:"AUS",pl:16,ct:3,st:0,ro:0,pts:24},
+      {p:"SPARROW, Luke",n:"AUS",pl:19,ct:3,st:0,ro:0,pts:24},
+      {p:"PILLAY, Viv",n:"SA",pl:10,ct:2,st:0,ro:0,pts:16},
+      {p:"GRIEVE, Nick",n:"NZ",pl:12,ct:1,st:0,ro:0,pts:8},
+      {p:"HOEY, Ryan",n:"AUS",pl:5,ct:1,st:0,ro:0,pts:8},
+      {p:"PRICE, Richard",n:"NZ",pl:19,ct:1,st:0,ro:0,pts:8},
+      {p:"ROBINSON, Ben",n:"ENG",pl:13,ct:1,st:0,ro:0,pts:8},
+      {p:"SHELDON, Mike",n:"AUS",pl:14,ct:1,st:0,ro:0,pts:8},
+      {p:"STYLES, Ryan",n:"AUS",pl:18,ct:0,st:0,ro:1,pts:8},
     ],
     2018: [
       {p:"WERREN, Steve",n:"AUS",pl:13,ct:7,st:1,ro:0,pts:68},
@@ -3442,25 +3503,37 @@ const DATA = {
     ],
     2025: [
       {p:"DANN, Kye",n:"AUS",pl:14,ct:11,st:0,ro:4,pts:150},
-      {p:"SEUREN, Isaac",n:"AUS",pl:17,ct:11,st:0,ro:0,pts:110},
-      {p:"WERREN, Steve",n:"AUS",pl:12,ct:3,st:5,ro:0,pts:105},
+      {p:"SEUREN, Isaac",n:"AUS",pl:18,ct:11,st:0,ro:0,pts:110},
+      {p:"WERREN, Steve",n:"AUS",pl:13,ct:3,st:5,ro:0,pts:105},
       {p:"BALOCH, Ali",n:"PAK",pl:19,ct:6,st:0,ro:0,pts:60},
-      {p:"JENKINS, Jacob",n:"NZ",pl:11,ct:5,st:0,ro:0,pts:50},
+      {p:"JENKINS, Jacob",n:"NZ",pl:12,ct:5,st:0,ro:0,pts:50},
       {p:"SNAITH, Lachie",n:"AUS",pl:10,ct:4,st:0,ro:1,pts:50},
       {p:"CHRISTOPHER, Lachie",n:"AUS",pl:3,ct:4,st:0,ro:0,pts:40},
       {p:"PHELAN, Jack",n:"NZ",pl:9,ct:3,st:0,ro:0,pts:30},
       {p:"POVERELLO, Marc",n:"SA",pl:3,ct:3,st:0,ro:0,pts:30},
-      {p:"STYLES, Ryan",n:"AUS",pl:11,ct:3,st:0,ro:0,pts:30},
+      {p:"STYLES, Ryan",n:"AUS",pl:12,ct:3,st:0,ro:0,pts:30},
       {p:"HAYES, Kyle",n:"AUS",pl:2,ct:1,st:1,ro:0,pts:25},
+      {p:"ARAVINTHAN, Vis",n:"AUS",pl:1,ct:2,st:0,ro:0,pts:20},
       {p:"GENT, Harry",n:"ENG",pl:1,ct:2,st:0,ro:0,pts:20},
       {p:"GRIMSTONE, Mitch",n:"NZ",pl:4,ct:2,st:0,ro:0,pts:20},
       {p:"MARKWICK, Scott",n:"AUS",pl:1,ct:2,st:0,ro:0,pts:20},
-      {p:"McQUIN, James",n:"ENG",pl:8,ct:2,st:0,ro:0,pts:20},
-      {p:"PANNOWITZ, Matthew",n:"AUS",pl:8,ct:2,st:0,ro:0,pts:20},
-      {p:"HOAR, Carl",n:"ENG",pl:14,ct:1,st:0,ro:0,pts:10},
+      {p:"McINTOSH, Sam",n:"AUS",pl:1,ct:2,st:0,ro:0,pts:20},
+      {p:"McQUIN, James",n:"ENG",pl:9,ct:2,st:0,ro:0,pts:20},
+      {p:"PANNOWITZ, Matthew",n:"AUS",pl:9,ct:2,st:0,ro:0,pts:20},
+      {p:"SHAIK, Ali",n:"UAE",pl:1,ct:2,st:0,ro:0,pts:20},
+      {p:"VALOB, Deepesh",n:"AUS",pl:1,ct:2,st:0,ro:0,pts:20},
+      {p:"ALLAM, Arib",n:"ENG",pl:1,ct:1,st:0,ro:0,pts:10},
+      {p:"BALDEN, Harry",n:"ENG",pl:2,ct:1,st:0,ro:0,pts:10},
       {p:"BROWN, Tom",n:"NZ",pl:6,ct:1,st:0,ro:0,pts:10},
-      {p:"GIDWANI, Karan",n:"NZ",pl:8,ct:1,st:0,ro:0,pts:10},
+      {p:"CARTER, Jonathan",n:"AUS",pl:2,ct:0,st:0,ro:1,pts:10},
       {p:"CHAFFEY, Karrick",n:"NZ",pl:4,ct:1,st:0,ro:0,pts:10},
+      {p:"CULLEY, James",n:"NZ",pl:2,ct:1,st:0,ro:0,pts:10},
+      {p:"GIDWANI, Karan",n:"NZ",pl:8,ct:1,st:0,ro:0,pts:10},
+      {p:"HOAR, Carl",n:"ENG",pl:14,ct:1,st:0,ro:0,pts:10},
+      {p:"MOISIN",n:"IND",pl:1,ct:1,st:0,ro:0,pts:10},
+      {p:"RYAN, Mick",n:"AUS",pl:1,ct:1,st:0,ro:0,pts:10},
+      {p:"SHELDON, Mike",n:"AUS",pl:1,ct:1,st:0,ro:0,pts:10},
+      {p:"TATE, Patch",n:"ENG",pl:1,ct:0,st:0,ro:1,pts:10},
     ],
     2026: [
       {p:"DANN, Kye",n:"AUS",pl:2,ct:3,st:0,ro:0,pts:30},
@@ -3865,6 +3938,10 @@ const DATA = {
       {d:"Sun 23 Jul",op:"Teddington",fmt:"40 Overs",res:"Win",sc:null},
       {d:"Sun 30 Jul",op:"Wembley",fmt:"40 Overs",res:"Win",sc:null},
       {d:"Sun 07 Aug",op:"Shepherd's Bush",fmt:"40 Overs",res:"Loss",sc:null},
+      {d:"Sun 13 Aug",op:"Edmonton",fmt:"40 Overs",res:"Loss",sc:null},
+      {d:"Sat 19 Aug",op:"Neville Holt",fmt:"40 Overs",res:"Win",sc:null,tour:"ISIS"},
+      {d:"Sun 20 Aug",op:"Nine Bar",fmt:"40 Overs",res:"Win",sc:null,tour:"ISIS"},
+      {d:"Sun 27 Aug",op:"Wembley",fmt:"Time Game",res:"Draw",sc:null},
     ],
     2018: [
       {d:"Sun 22 Apr",op:"Highgate",fmt:"40 Overs",res:"Cancelled",sc:null},
@@ -4816,7 +4893,7 @@ const SUCCESS_DECADES = [
   {d:"1980s",   pld:182,w:75, l:43, dr:63, t:1, rate:52},
   {d:"1990s",   pld:213,w:93, l:39, dr:77, t:4, rate:56},
   {d:"2000s",   pld:181,w:93, l:55, dr:21, t:9, rate:57},
-  {d:"2010s",   pld:184,w:109,l:63, dr:8,  t:0, rate:61},
+  {d:"2010s",   pld:188,w:110,l:65, dr:9,  t:0, rate:61},
   {d:"2020s",   pld:116,w:67, l:44, dr:0,  t:2, rate:59},
 ];
 
@@ -4941,81 +5018,126 @@ const COMMITTEE = [
 
 const CENTURIONS = [
   {p:"JACKSON, Bruce",r:196,no:false,y:2005,op:"Frensham"},
-  {p:"JACKSON, Bruce",r:163,no:false,y:2003,op:"Frensham"},
+  {p:"JACKSON, Bruce",r:163,no:true,y:2003,op:"Frensham"},
   {p:"PRICE, Richard",r:162,no:false,y:2017,op:"Shepherds Bush"},
+  {p:"JACKSON, Bruce",r:152,no:false,y:1996,op:"Northwood"},
   {p:"GENT, Harry",r:149,no:false,y:2025,op:"Southgate Adelaide"},
-  {p:"STOCKS, David",r:147,no:false,y:2005,op:"RNVR"},
-  {p:"KIRMANI, Nehal",r:147,no:false,y:2010,op:"South Hampstead"},
-  {p:"MONK, Roly",r:145,no:false,y:2004,op:"Shepperton"},
-  {p:"HOAR, Carl",r:144,no:false,y:2006,op:"Highgate"},
-  {p:"TAMBLING, Damian",r:143,no:false,y:2014,op:"Kew"},
+  {p:"KIRMANI, Nehal",r:147,no:true,y:2010,op:"South Hampstead"},
+  {p:"STOCKS, David",r:147,no:true,y:2005,op:"RNVR"},
+  {p:"MONK, Roly",r:145,no:true,y:2004,op:"Shepperton"},
+  {p:"HOAR, Carl",r:144,no:true,y:2006,op:"Highgate"},
+  {p:"TAMBLING, Damian",r:143,no:true,y:2014,op:"Kew"},
+  {p:"HOAR, Carl",r:140,no:true,y:2011,op:"Nine Bar"},
   {p:"WALKER, Michael",r:140,no:false,y:2009,op:"Barnes"},
-  {p:"HOAR, Carl",r:140,no:false,y:2011,op:"Nine Bar"},
+  {p:"JACKSON, Bruce",r:140,no:true,y:1992,op:"Wendover"},
   {p:"SCHWIM, Brett",r:139,no:false,y:2013,op:"Ealing Three Bridges"},
-  {p:"MONK, Roly",r:134,no:false,y:2005,op:"Valley End"},
-  {p:"JACKSON, Bruce",r:132,no:false,y:2006,op:"Budleigh Salterton                 (Devon Tour)"},
-  {p:"TAMBLING, Damian",r:132,no:false,y:2013,op:"Teddington"},
+  {p:"MONK, Roly",r:134,no:true,y:2005,op:"Valley End"},
   {p:"HOAR, Carl",r:132,no:false,y:2018,op:"Shepperton"},
-  {p:"JACKSON, Bruce",r:131,no:false,y:2006,op:"Hampstead"},
+  {p:"TAMBLING, Damian",r:132,no:false,y:2013,op:"Teddington"},
+  {p:"JACKSON, Bruce",r:132,no:true,y:2006,op:"Budleigh Salterton                 (Devon Tour)"},
   {p:"KHAN, Shahna",r:131,no:false,y:2011,op:"Harrow Weald"},
+  {p:"JACKSON, Bruce",r:131,no:true,y:2006,op:"Hampstead"},
+  {p:"JACKSON, Bruce",r:131,no:true,y:1999,op:"Oxford Downs"},
   {p:"HOAR, Carl",r:130,no:false,y:2010,op:"Valley End"},
-  {p:"JACKSON, Bruce",r:129,no:false,y:2003,op:"Shepperton"},
-  {p:"MONK, Roly",r:125,no:false,y:2000,op:"Whitchurch"},
+  {p:"JACKSON, Bruce",r:129,no:true,y:2003,op:"Shepperton"},
+  {p:"BULLOUGH, Steve",r:129,no:true,y:1992,op:"Glastonbury"},
+  {p:"JACKSON, Bruce",r:128,no:false,y:1998,op:"Frensham"},
+  {p:"JACKSON, Bruce",r:127,no:true,y:1995,op:"Gerards Cross"},
+  {p:"EXLEY, Mark",r:127,no:false,y:1993,op:"Chalfont St. Giles"},
   {p:"CHRISTOPHER, Lachie",r:125,no:false,y:2024,op:"Highgate"},
-  {p:"KHAN, Shahna",r:124,no:false,y:2014,op:"Wembley"},
+  {p:"MONK, Roly",r:125,no:false,y:2000,op:"Whitchurch"},
   {p:"SCHWIM, Brett",r:124,no:false,y:2015,op:"Old Actonians"},
-  {p:"WALKER, Michael",r:123,no:false,y:2007,op:"Sinjuns Grammarians"},
-  {p:"TAMBLING, Damian",r:123,no:false,y:2013,op:"Langleybury"},
+  {p:"KHAN, Shahna",r:124,no:false,y:2014,op:"Wembley"},
   {p:"STYLES, Ryan",r:123,no:false,y:2021,op:"Post Modernists"},
-  {p:"JACKSON, Bruce",r:122,no:false,y:2002,op:"Valley End"},
+  {p:"TAMBLING, Damian",r:123,no:false,y:2013,op:"Langleybury"},
+  {p:"WALKER, Michael",r:123,no:false,y:2007,op:"Sinjuns Grammarians"},
+  {p:"JACKSON, Bruce",r:122,no:true,y:2002,op:"Valley End"},
+  {p:"JACKSON, Bruce",r:122,no:true,y:1994,op:"Rickmansworth"},
+  {p:"GRIMSTONE, Mitch",r:121,no:true,y:2024,op:"Pinner"},
+  {p:"THACKER, Nilesh",r:121,no:true,y:2014,op:"Edmonton"},
   {p:"HOAR, Carl",r:121,no:false,y:2013,op:"Highgate"},
   {p:"NAGRE, Ashish",r:121,no:false,y:2013,op:"Highgate"},
-  {p:"THACKER, Nilesh",r:121,no:false,y:2014,op:"Edmonton"},
-  {p:"GRIMSTONE, Mitch",r:121,no:true,y:2024,op:"Pinner"},
+  {p:"GURNEY, David",r:120,no:true,y:1997,op:"Chenies & Latimer"},
+  {p:"JACKSON, Bruce",r:120,no:true,y:1990,op:"Great & Little Tew"},
   {p:"HOAR, Carl",r:119,no:false,y:2024,op:"Brentham"},
-  {p:"ATKINSON, Dale",r:115,no:false,y:2007,op:"Old Woking"},
-  {p:"KHAN, Shahna",r:115,no:false,y:2012,op:"Harrow Weald"},
+  {p:"MALCOLM, Skander",r:119,no:true,y:1998,op:"Hampton Wick"},
+  {p:"EXLEY, Mark",r:119,no:true,y:1994,op:"Headley"},
+  {p:"JACKSON, Bruce",r:119,no:true,y:1993,op:"Royal Household"},
+  {p:"EXLEY, Mark",r:119,no:true,y:1992,op:"Frimchett"},
+  {p:"JACKSON, Bruce",r:118,no:false,y:1998,op:"Epsom"},
+  {p:"DITTA, Ash",r:118,no:false,y:1990,op:"Gaflac"},
+  {p:"JACKSON, Bruce",r:117,no:false,y:1997,op:"Wycombe House"},
+  {p:"JACKSON, Bruce",r:117,no:false,y:1995,op:"Whitchurch"},
   {p:"HOAR, Carl",r:115,no:true,y:2017,op:"North Enfield"},
-  {p:"ADAMS, Rhys",r:114,no:false,y:2009,op:"Hampton Wick"},
+  {p:"KHAN, Shahna",r:115,no:false,y:2012,op:"Harrow Weald"},
+  {p:"ATKINSON, Dale",r:115,no:false,y:2007,op:"Old Woking"},
+  {p:"STOCKS, David",r:115,no:false,y:1996,op:"Lensbury"},
   {p:"HOAR, Carl",r:114,no:false,y:2014,op:"Highgate"},
-  {p:"HOAR, Carl",r:114,no:false,y:2014,op:"Post Modernists"},
-  {p:"WERREN, Steve",r:112,no:false,y:2000,op:"Trailfinders"},
-  {p:"SIMS, Adam",r:112,no:false,y:2005,op:"Epsom"},
-  {p:"KHAN, Shahna",r:112,no:false,y:2013,op:"Hillingdon Manor"},
+  {p:"HOAR, Carl",r:114,no:true,y:2014,op:"Post Modernists"},
+  {p:"ADAMS, Rhys",r:114,no:false,y:2009,op:"Hampton Wick"},
+  {p:"MUNDAY, Nick",r:114,no:false,y:1999,op:"Bank of England"},
+  {p:"JACKSON, Bruce",r:113,no:false,y:1998,op:"Whitchurch"},
+  {p:"STOCKS, David",r:113,no:true,y:1994,op:"Spencer Wood"},
   {p:"HOAR, Carl",r:112,no:true,y:2021,op:"Pinner"},
+  {p:"KHAN, Shahna",r:112,no:false,y:2013,op:"Hillingdon Manor"},
+  {p:"SIMS, Adam",r:112,no:false,y:2005,op:"Epsom"},
+  {p:"WERREN, Steve",r:112,no:false,y:2000,op:"Trailfinders"},
+  {p:"JACKSON, Bruce",r:112,no:false,y:1992,op:"Exeter University"},
   {p:"KHAN, Shahna",r:111,no:false,y:2013,op:"Acton"},
-  {p:"HOAR, Carl",r:110,no:false,y:2009,op:"Hampstead"},
+  {p:"JACKSON, Bruce",r:111,no:false,y:1997,op:"Shepperton"},
   {p:"PRICE, Richard",r:110,no:false,y:2017,op:"Holtwhites Trinibis"},
-  {p:"HOAR, Carl",r:109,no:false,y:2007,op:"Barnes"},
-  {p:"HOAR, Carl",r:109,no:false,y:2008,op:"Pretenders"},
-  {p:"CHAUHAN, Josh",r:109,no:false,y:2009,op:"Valley End"},
-  {p:"HOAR, Carl",r:109,no:false,y:2016,op:"Crouch End"},
+  {p:"HOAR, Carl",r:110,no:true,y:2009,op:"Hampstead"},
+  {p:"GURNEY, David",r:110,no:true,y:1999,op:"Gerards Cross"},
+  {p:"THORNTON, C",r:110,no:false,y:1990,op:"Kilndown"},
+  {p:"JACKSON, Bruce",r:110,no:false,y:1988,op:"Gaflac"},
   {p:"WEGENER, Scott",r:109,no:true,y:2022,op:"Wembley"},
+  {p:"HOAR, Carl",r:109,no:false,y:2016,op:"Crouch End"},
+  {p:"CHAUHAN, Josh",r:109,no:true,y:2009,op:"Valley End"},
+  {p:"HOAR, Carl",r:109,no:false,y:2008,op:"Pretenders"},
+  {p:"HOAR, Carl",r:109,no:false,y:2007,op:"Barnes"},
+  {p:"JACKSON, Bruce",r:109,no:false,y:1997,op:"Hampstead"},
+  {p:"JACKSON, Bruce",r:109,no:false,y:1991,op:"Old Haberdashers"},
+  {p:"JACKSON, Bruce",r:109,no:false,y:1991,op:"Elstead"},
   {p:"JACKSON, Bruce",r:108,no:false,y:2006,op:"Wycombe House"},
-  {p:"PRICE, Richard",r:105,no:false,y:2019,op:"Great Missenden"},
+  {p:"STOCKS, David",r:106,no:false,y:1996,op:"Little Durnford"},
   {p:"McQUIN, James",r:105,no:false,y:2025,op:"Barnes"},
-  {p:"HOAR, Carl",r:104,no:true,y:2018,op:"Kew"},
-  {p:"WALSH, Luke",r:104,no:false,y:2021,op:"Post Modernists"},
+  {p:"PRICE, Richard",r:105,no:false,y:2019,op:"Great Missenden"},
+  {p:"JACKSON, Bruce",r:105,no:false,y:1998,op:"Chenies & Latimer"},
+  {p:"STOCKS, David",r:105,no:false,y:1997,op:"Ghurt"},
+  {p:"JACKSON, Bruce",r:105,no:false,y:1990,op:"Culmstock"},
   {p:"CHRISTOPHER, Lachie",r:104,no:true,y:2024,op:"Winchmore Hill"},
-  {p:"JACKSON, Bruce",r:103,no:false,y:2004,op:"Post Modernists"},
-  {p:"HOAR, Carl",r:103,no:false,y:2008,op:"Valley End"},
+  {p:"WALSH, Luke",r:104,no:false,y:2021,op:"Post Modernists"},
+  {p:"HOAR, Carl",r:104,no:true,y:2018,op:"Kew"},
+  {p:"JACKSON, Bruce",r:104,no:false,y:1999,op:"Shepperton"},
+  {p:"SMITH, D",r:104,no:false,y:1995,op:"Hampstead"},
   {p:"BALOCH, Ali",r:103,no:false,y:2019,op:"Wembley"},
-  {p:"LAWES, Graham",r:102,no:false,y:2001,op:"Whitchurch"},
-  {p:"STOCKS, David",r:102,no:false,y:2003,op:"Burgh Heath"},
-  {p:"JACKSON, Bruce",r:101,no:false,y:2003,op:"Valley End"},
-  {p:"STOCKS, David",r:101,no:false,y:2003,op:"Budleigh Salterton"},
-  {p:"WALKER, Michael",r:101,no:false,y:2008,op:"Streatham & Marlborough"},
+  {p:"HOAR, Carl",r:103,no:false,y:2008,op:"Valley End"},
+  {p:"JACKSON, Bruce",r:103,no:true,y:2004,op:"Post Modernists"},
+  {p:"MARTYN, Ian",r:103,no:true,y:1993,op:"Frimchett"},
+  {p:"STOCKS, David",r:102,no:true,y:2003,op:"Burgh Heath"},
+  {p:"LAWES, Graham",r:102,no:true,y:2001,op:"Whitchurch"},
+  {p:"JACKSON, Bruce",r:102,no:false,y:1992,op:"Frimchett"},
+  {p:"HOAR, Carl",r:101,no:true,y:2015,op:"Isleworth Wanderers"},
   {p:"WILLIS, J",r:101,no:false,y:2009,op:"Barnes"},
-  {p:"HOAR, Carl",r:101,no:false,y:2015,op:"Isleworth Wanderers"},
-  {p:"MONK, Roly",r:100,no:false,y:2004,op:"Barnes"},
-  {p:"HOAR, Carl",r:100,no:false,y:2009,op:"Pretenders"},
-  {p:"MONK, Roly",r:100,no:true,y:2009,op:"Neville Holt"},
-  {p:"HOAR, Carl",r:100,no:false,y:2013,op:"Barnes"},
-  {p:"HOAR, Carl",r:100,no:false,y:2013,op:"Hillingdon Manor"},
-  {p:"WILSON, Zach",r:100,no:false,y:2016,op:"Northwood"},
-  {p:"BALOCH, Ali",r:100,no:false,y:2019,op:"Southgate Adelaide"},
+  {p:"WALKER, Michael",r:101,no:false,y:2008,op:"Streatham & Marlborough"},
+  {p:"JACKSON, Bruce",r:101,no:false,y:2003,op:"Valley End"},
+  {p:"STOCKS, David",r:101,no:true,y:2003,op:"Budleigh Salterton"},
+  {p:"JACKSON, Bruce",r:101,no:false,y:1997,op:"Limpsfield"},
+  {p:"JACKSON, Bruce",r:101,no:true,y:1995,op:"Wendover"},
+  {p:"JACKSON, Bruce",r:101,no:false,y:1995,op:"Hampton Wick"},
+  {p:"JACKSON, Bruce",r:101,no:false,y:1990,op:"Churt"},
+  {p:"STYLES, Ryan",r:100,no:false,y:2022,op:"Harrow St. Mary's"},
   {p:"BLIGHT, Paul",r:100,no:false,y:2021,op:"Harrow St. Mary's"},
-  {p:"STYLES, Ryan",r:100,no:false,y:2022,op:"Harrow St. Mary's"}
+  {p:"BALOCH, Ali",r:100,no:false,y:2019,op:"Southgate Adelaide"},
+  {p:"HOAR, Carl",r:100,no:true,y:2017,op:"Wembley"},
+  {p:"WILSON, Zach",r:100,no:false,y:2016,op:"Northwood"},
+  {p:"HOAR, Carl",r:100,no:true,y:2013,op:"Barnes"},
+  {p:"HOAR, Carl",r:100,no:true,y:2013,op:"Hillingdon Manor"},
+  {p:"HOAR, Carl",r:100,no:true,y:2009,op:"Pretenders"},
+  {p:"MONK, Roly",r:100,no:true,y:2009,op:"Neville Holt"},
+  {p:"MONK, Roly",r:100,no:false,y:2004,op:"Barnes"},
+  {p:"MUNDAY, Nick",r:100,no:true,y:1999,op:"Frensham"},
+  {p:"MALCOLM, Skander",r:100,no:true,y:1998,op:"Wycombe House"},
 ];
 
 const FIVE_WICKET_HAULS = [
@@ -5192,6 +5314,11 @@ function buildChampionRows(season) {
 // --- ALL-SEASONS AGGREGATION ---
 // Combines a player's rows across seasons into one career-total row.
 function aggregate(discipline) {
+  // First: pre-compute career caps per player (max pl per season, summed across
+  // all seasons the player appeared in ANY section). This becomes the canonical
+  // "Pl" displayed in the all-seasons view, identical across batting/bowling/fielding/CC.
+  const careerCapsByPlayer = computeCareerCaps();
+
   const byKey = new Map();
   Object.keys(DATA[discipline] || {}).forEach(season => {
     (DATA[discipline][season] || []).forEach(r => {
@@ -5202,7 +5329,6 @@ function aggregate(discipline) {
       const agg = byKey.get(k);
       agg.seasons.add(Number(season));
       if (discipline === "batting") {
-        agg.pl   = (agg.pl   || 0) + (r.pl   || 0);
         agg.inn  = (agg.inn  || 0) + (r.inn  || 0);
         agg.no   = (agg.no   || 0) + (r.no   || 0);
         agg.runs = (agg.runs || 0) + (r.runs || 0);
@@ -5211,7 +5337,6 @@ function aggregate(discipline) {
         agg.f50  = (agg.f50  || 0) + (r.f50  || 0);
         agg.f100 = (agg.f100 || 0) + (r.f100 || 0);
       } else if (discipline === "bowling") {
-        agg.pl  = (agg.pl  || 0) + (r.pl  || 0);
         agg.inn = (agg.inn || 0) + (r.inn || 0);
         agg.ov  = (agg.ov  || 0) + (r.ov  || 0);
         agg.m   = (agg.m   || 0) + (r.m   || 0);
@@ -5219,7 +5344,6 @@ function aggregate(discipline) {
         agg.wk  = (agg.wk  || 0) + (r.wk  || 0);
         agg.f5w = (agg.f5w || 0) + (r.f5w || 0);
       } else if (discipline === "fielding") {
-        agg.pl  = (agg.pl  || 0) + (r.pl  || 0);
         agg.ct  = (agg.ct  || 0) + (r.ct  || 0);
         agg.st  = (agg.st  || 0) + (r.st  || 0);
         agg.ro  = (agg.ro  || 0) + (r.ro  || 0);
@@ -5227,11 +5351,12 @@ function aggregate(discipline) {
       }
     });
   });
-  // Compute derived averages
+  // Compute derived averages and set canonical Pl
   const rows = [...byKey.values()];
   rows.forEach(a => {
     a.seasonCount = a.seasons.size;
     delete a.seasons;
+    a.pl = careerCapsByPlayer.get(a.p) || 0;
     if (discipline === "batting") {
       const dis = (a.inn || 0) - (a.no || 0);
       a.ave = dis > 0 ? a.runs / dis : null;
@@ -5241,6 +5366,29 @@ function aggregate(discipline) {
     }
   });
   return rows;
+}
+
+// Compute career caps per player: for each season the player appeared in any
+// section, take the max pl across batting/bowling/fielding rows; sum across seasons.
+function computeCareerCaps() {
+  const result = new Map();
+  const allSeasons = new Set();
+  for (const sec of ["batting", "bowling", "fielding"]) {
+    Object.keys(DATA[sec] || {}).forEach(s => allSeasons.add(s));
+  }
+  for (const season of allSeasons) {
+    const maxPlPerPlayer = new Map();
+    for (const sec of ["batting", "bowling", "fielding"]) {
+      for (const r of (DATA[sec][season] || [])) {
+        const cur = maxPlPerPlayer.get(r.p) || 0;
+        maxPlPerPlayer.set(r.p, Math.max(cur, r.pl || 0));
+      }
+    }
+    for (const [p, pl] of maxPlPerPlayer) {
+      result.set(p, (result.get(p) || 0) + pl);
+    }
+  }
+  return result;
 }
 
 // --- RENDER ---
@@ -5491,6 +5639,8 @@ function renderFixtures(c) {
   `;
   c.append(summary);
 
+  const colCount = allSeasons ? 6 : 5;
+
   const table = el("table", { class: "stats" });
   table.innerHTML = `
     <thead><tr>
@@ -5499,18 +5649,59 @@ function renderFixtures(c) {
       <th class="l">Result</th><th class="r">Scorecard</th>
     </tr></thead>
     <tbody>
-      ${fixtures.map(f => `
-        <tr>
+      ${fixtures.map((f, i) => {
+        const isPlaceholder = (f.op || '').toLowerCase().startsWith('isis') || f.op === 'TBC';
+        const oppHtml = isPlaceholder
+          ? `<span class="name">${f.op}</span>`
+          : `<span class="name h2h-link" data-h2h-opp="stats-${i}" onclick="toggleH2HStats(${i}, ${JSON.stringify(f.op).replace(/"/g, '&quot;')})" style="cursor:pointer;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px">${f.op}</span>`;
+        return `
+        <tr data-h2h-row="stats-${i}">
           ${allSeasons ? `<td style="font-family:var(--mono);font-size:12px;color:var(--muted);font-weight:500">${f.year}</td>` : ''}
           <td style="font-family:var(--mono);font-size:12px;color:var(--muted)">${f.d}</td>
-          <td class="name">${f.op}</td>
+          <td>${oppHtml}</td>
           <td style="color:var(--muted);font-size:12px">${f.fmt}</td>
           <td><span class="pill ${statusClass(f)}">${statusLabel(f)}</span></td>
           <td class="r">${f.sc ? `<a href="${f.sc}" target="_blank" class="sc-link">📄 PDF</a>` : '<span style="color:#a8a29e;font-size:12px">—</span>'}</td>
-        </tr>`).join("")}
+        </tr>
+        <tr data-h2h-panel="stats-${i}" style="display:none;">
+          <td colspan="${colCount}" style="padding:0;background:var(--panel)"></td>
+        </tr>`;
+      }).join("")}
     </tbody>
   `;
   c.append(table);
+}
+
+function toggleH2HStats(idx, opponent) {
+  const row = document.querySelector(`[data-h2h-row="stats-${idx}"]`);
+  const panel = document.querySelector(`[data-h2h-panel="stats-${idx}"]`);
+  const opp = document.querySelector(`[data-h2h-opp="stats-${idx}"]`);
+  if (!row || !panel || !opp) return;
+
+  const inner = panel.firstElementChild;
+  const isOpen = panel.style.display === 'table-row';
+
+  if (isOpen) {
+    panel.style.display = 'none';
+    opp.classList.remove('open');
+    return;
+  }
+
+  // Close any other open H2H panels (both stats and 2026 fixture variants)
+  document.querySelectorAll('[data-h2h-panel]').forEach(p => {
+    if (p === panel) return;
+    p.style.display = 'none';
+  });
+  document.querySelectorAll('[data-h2h-opp]').forEach(o => {
+    if (o === opp) return;
+    o.classList.remove('open');
+  });
+
+  if (!inner.innerHTML.trim()) {
+    inner.innerHTML = renderH2HPanel(opponent);
+  }
+  panel.style.display = 'table-row';
+  opp.classList.add('open');
 }
 
 function renderAwards(c, awardKey) {
@@ -6019,7 +6210,7 @@ function renderCenturionsTab(c) {
   c.innerHTML = `
     <div class="records-tab-head">
       <div class="records-tab-title">Centurions</div>
-      <div class="records-tab-subtitle">Every Nepotists century since 2000 — ${CENTURIONS.length} hundreds across 26 seasons. Hoar leads with 20.</div>
+      <div class="records-tab-subtitle">Every Nepotists century — ${CENTURIONS.length} hundreds across 47 seasons (1980–2026). Bruce Jackson leads with 35.</div>
     </div>
     <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:12px; margin-bottom:24px;">
       ${top.map(([p, n], i) => `
@@ -6046,7 +6237,7 @@ function renderCenturionsTab(c) {
     </table>
     </div>
     <div class="debut-note">
-      <strong>Notes:</strong> List sorted by score (highest first). Compiled from per-match batting scorecards 2000\u20132026 (including 2020 \u2014 5 games played). <span class="star-no">*</span> denotes not out. The all-time record stands at <strong>Bruce Jackson 196 vs Frensham (2005)</strong>.
+      <strong>Notes:</strong> List sorted by score (highest first). Compiled from per-match batting scorecards 2000\u20132026 (including 2020 \u2014 5 games played) plus 44 pre-2000 hundreds drawn from the club archive (per-match batting figures for those seasons aren\u2019t yet digitised). <span class="star-no">*</span> denotes not out. The all-time record stands at <strong>Bruce Jackson 196 vs Frensham (2005)</strong>.
     </div>`;
 }
 
@@ -6301,12 +6492,34 @@ function renderNats() {
   $("#nat").innerHTML = allOpt + nats.map(n => `<option value="${n}"${n === state.nat ? " selected" : ""}>${n}</option>`).join("");
 }
 
+function renderTopCaps() {
+  const container = document.getElementById("top-caps-list");
+  if (!container) return;
+  // Use the same career-caps logic as the all-seasons aggregate: max pl per season,
+  // summed across every season the player appeared in any section.
+  const caps = computeCareerCaps();
+  const top5 = [...caps.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5);
+
+  // Format "WERREN, Steve" → "Werren, S"
+  const fmt = full => {
+    const [last, first] = full.split(",").map(s => s.trim());
+    const lastTitle = last.charAt(0) + last.slice(1).toLowerCase();
+    const firstInitial = (first || "").charAt(0).toUpperCase();
+    return firstInitial ? `${lastTitle}, ${firstInitial}` : lastTitle;
+  };
+
+  container.innerHTML = top5.map(([p, n], i) =>
+    `<div class="caps-row"><span class="caps-name"><span class="rank">${i + 1}</span>${fmt(p)}</span><span class="caps-num">${n}</span></div>`
+  ).join("");
+}
+
 // --- WIRE UP ---
 renderSeasons();
 renderNats();
 renderTabs();
 renderRecordsTabs();
 renderRecordsContent();
+renderTopCaps();
 render2026Fixtures();
 render();
 
