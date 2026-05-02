@@ -6408,7 +6408,7 @@ function renderCenturionsTab(c) {
   c.innerHTML = `
     <div class="records-tab-head">
       <div class="records-tab-title">Centurions</div>
-      <div class="records-tab-subtitle">Every Nepotists century — ${CENTURIONS.length} hundreds across 47 seasons (1980–2026). Bruce Jackson leads with 35.</div>
+      <div class="records-tab-subtitle">Every Nepotists century — ${CENTURIONS.length} hundreds by ${new Set(CENTURIONS.map(c => c.p)).size} batters across 47 seasons (1980–2026). Bruce Jackson leads with 35.</div>
     </div>
     <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:12px; margin-bottom:24px;">
       ${top.map(([p, n], i) => `
@@ -6447,7 +6447,7 @@ function renderFiveWiTab(c) {
   c.innerHTML = `
     <div class="records-tab-head">
       <div class="records-tab-title">5-Wicket Hauls</div>
-      <div class="records-tab-subtitle">Every Nepotists five-for since 2000 \u2014 ${FIVE_WICKET_HAULS.length} hauls across 26 seasons. Colin Dale leads with 5.</div>
+      <div class="records-tab-subtitle">Every Nepotists five-for since 2000 \u2014 ${FIVE_WICKET_HAULS.length} hauls by ${new Set(FIVE_WICKET_HAULS.map(f => f.p)).size} bowlers across 26 seasons. Colin Dale leads with 5.</div>
     </div>
     <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:12px; margin-bottom:24px;">
       ${top.map(([p, n], i) => `
@@ -6467,7 +6467,7 @@ function renderFiveWiTab(c) {
             <td class="r mono" style="color:var(--muted)">${i+1}</td>
             <td class="r mono bold">${f.wk}-${f.r}</td>
             <td class="name">${f.p}</td>
-            <td class="r mono">${f.ov}</td>
+            <td class="r mono">${fmtCricketOvers(f.ov)}</td>
             <td class="r mono">${f.y}</td>
             <td>${f.op}</td>
           </tr>`).join("")}
@@ -6688,6 +6688,17 @@ function renderNats() {
   const nats = [...counts.keys()].sort();
   const allOpt = `<option value="All"${state.nat === "All" ? " selected" : ""}>All</option>`;
   $("#nat").innerHTML = allOpt + nats.map(n => `<option value="${n}"${n === state.nat ? " selected" : ""}>${n}</option>`).join("");
+}
+
+function fmtCricketOvers(ov) {
+  // Convert decimal overs (e.g. 12.33) to cricket dot-notation (12.2 = 12 overs + 2 balls).
+  // Decimal fraction maps to balls 0-5: .17≈1, .33≈2, .5≈3, .67≈4, .83≈5.
+  if (ov == null) return '–';
+  const whole = Math.floor(ov);
+  const balls = Math.round((ov - whole) * 6);
+  if (balls === 0) return String(whole);
+  if (balls === 6) return String(whole + 1);  // edge case
+  return whole + '.' + balls;
 }
 
 function renderTopCaps() {
