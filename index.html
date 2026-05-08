@@ -483,6 +483,354 @@
     .footer-sub { font-size: 11px; color: var(--muted); margin-top: 4px; display: flex; align-items: center; gap: 4px; }
     .footer-meta { font-size: 11px; color: var(--muted); max-width: 320px; text-align: right; }
   </style>
+<style id="honours-style">
+.honours-section {
+  /* CSS vars scoped to this section so they can't conflict with the main site palette */
+  --hb-wood-mid:   #4a2c1c;
+  --hb-gold:       #b08840;
+  --hb-gold-light: #d4a85f;
+  --hb-gold-deep:  #6e5020;
+  --hb-engraved:   rgba(0,0,0,0.85);
+  background: #1a1008;
+  padding: 80px 0 100px;
+  font-family: 'EB Garamond', Georgia, serif;
+  color: var(--hb-gold);
+}
+.honours-section .honours-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.honours-section .section-head { margin-bottom: 24px; }
+.honours-section .section-num.dark { color: var(--hb-gold-light); }
+.honours-section .section-title {
+  color: var(--hb-gold-light);
+  font-family: 'Cinzel', 'Crimson Text', Georgia, serif;
+  letter-spacing: 0.04em;
+}
+.honours-section .section-head p {
+  color: var(--hb-gold) !important;
+  opacity: 0.78;
+}
+
+/* Tab nav: brass-on-walnut */
+.honours-section .honours-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 32px 0 0;
+  border-bottom: 2px solid var(--hb-gold-deep);
+  padding-bottom: 0;
+}
+.honours-section .honours-tab {
+  padding: 12px 22px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  color: var(--hb-gold);
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  opacity: 0.65;
+  transition: all .15s;
+}
+.honours-section .honours-tab:hover { opacity: 1; }
+.honours-section .honours-tab.active {
+  opacity: 1;
+  color: var(--hb-gold-light);
+  border-bottom-color: var(--hb-gold-light);
+}
+.honours-section .honours-content { padding-top: 40px; }
+
+/* Pavilion wood board */
+.honours-section .hb-pavilion {
+  padding: 18px;
+  background: #0f0a06;
+  border: 6px solid #1a0e07;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.85);
+}
+.honours-section .hb-board {
+  position: relative;
+  padding: 56px 38px 50px 38px;
+  background-color: var(--hb-wood-mid);
+  background-image:
+    repeating-linear-gradient(0deg, rgba(0,0,0,0.04) 0px, rgba(0,0,0,0.04) 1px, transparent 1px, transparent 3px),
+    radial-gradient(ellipse 800px 100px at 30% 20%, rgba(0,0,0,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 600px 80px at 70% 60%, rgba(0,0,0,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 400px 60px at 20% 85%, rgba(0,0,0,0.12) 0%, transparent 60%),
+    linear-gradient(180deg, #4f2f1f 0%, #3d2316 35%, #4a2c1c 70%, #382013 100%);
+  box-shadow:
+    inset 0 0 60px rgba(0,0,0,0.5),
+    inset 0 4px 12px rgba(0,0,0,0.4),
+    inset 0 -4px 12px rgba(0,0,0,0.5);
+  border: 2px solid #1a0e07;
+}
+
+/* Title plaque */
+.honours-section .hb-plaque {
+  position: relative;
+  width: 60%;
+  max-width: 480px;
+  margin: -76px auto 36px auto;
+  padding: 14px 24px;
+  background: linear-gradient(180deg, #5a3826 0%, #3d2417 50%, #5a3826 100%);
+  border: 2px solid #2a1810;
+  box-shadow:
+    0 6px 14px rgba(0,0,0,0.7),
+    inset 0 1px 0 rgba(212,175,80,0.25),
+    inset 0 -1px 0 rgba(0,0,0,0.5);
+  text-align: center;
+  z-index: 2;
+}
+.honours-section .hb-plaque h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--hb-gold-light);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.9), 0 -1px 0 rgba(255,200,100,0.15);
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* ========== Centuries / Five-wicket: 4-col flow ========== */
+.honours-section .hb-flow {
+  column-count: 3;
+  column-gap: 32px;
+  position: relative;
+  z-index: 1;
+}
+.honours-section .hb-entry {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1.3fr) minmax(0, 1fr) 40px;
+  gap: 8px;
+  align-items: baseline;
+  padding: 2px 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--hb-gold);
+  text-shadow: 0 1px 0 var(--hb-engraved);
+  break-inside: avoid;
+}
+.honours-section .hb-entry .hb-year {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--hb-gold-light);
+}
+.honours-section .hb-entry .hb-name {
+  font-family: 'EB Garamond', serif;
+  font-weight: 500;
+  font-size: 13.5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+.honours-section .hb-entry .hb-name .hb-nat {
+  font-family: 'Cinzel', serif;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--hb-gold-deep);
+  margin-left: 3px;
+}
+.honours-section .hb-entry .hb-opp {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 12px;
+  color: var(--hb-gold);
+  opacity: 0.78;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+.honours-section .hb-entry .hb-val {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--hb-gold-light);
+  white-space: nowrap;
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: baseline;
+}
+.honours-section .hb-entry .hb-val .hb-num { text-align: right; }
+.honours-section .hb-entry .hb-val .hb-star {
+  color: var(--hb-gold);
+  font-size: 10px;
+  display: inline-block;
+  width: 8px;
+  text-align: left;
+  margin-left: 1px;
+}
+
+/* ========== Season Champions: full table ========== */
+.honours-section .hb-champ-wrap { overflow-x: auto; position: relative; z-index: 1; }
+.honours-section table.hb-champs {
+  width: 100%;
+  min-width: 1800px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.honours-section table.hb-champs col.hb-c-year   { width: 90px; }
+.honours-section table.hb-champs col.hb-c-bat    { width: 230px; }
+.honours-section table.hb-champs col.hb-c-bowl   { width: 230px; }
+.honours-section table.hb-champs col.hb-c-field  { width: 270px; }
+.honours-section table.hb-champs col.hb-c-champ  { width: 230px; }
+.honours-section table.hb-champs thead tr.hb-group-row th {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  color: var(--hb-gold-light);
+  padding: 8px 10px 4px 10px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+  border-bottom: 1px solid rgba(212,175,80,0.4);
+}
+.honours-section table.hb-champs thead tr.hb-col-row th {
+  font-family: 'Cinzel', serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--hb-gold);
+  padding: 6px 8px 12px 8px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+  border-bottom: 1px double var(--hb-gold);
+}
+.honours-section table.hb-champs tbody td {
+  font-family: 'EB Garamond', serif;
+  padding: 11px 14px;
+  color: var(--hb-gold);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.6);
+  vertical-align: middle;
+  line-height: 1.4;
+  overflow: hidden;
+  border-right: 1px solid rgba(212,175,80,0.10);
+}
+.honours-section table.hb-champs td:last-child { border-right: none; }
+.honours-section table.hb-champs td.hb-year {
+  font-family: 'Cinzel', serif;
+  font-weight: 600; font-size: 14px;
+  letter-spacing: 0.06em;
+  color: var(--hb-gold-light);
+  text-align: center;
+  white-space: nowrap;
+  border-right: 1px solid rgba(212,175,80,0.18);
+}
+.honours-section table.hb-champs td.hb-cell .hb-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  width: 100%;
+}
+.honours-section table.hb-champs td.hb-cell .hb-player-block {
+  flex: 1 1 auto;
+  text-align: left;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+}
+.honours-section table.hb-champs td.hb-cell .hb-player-block .hb-nat {
+  font-family: 'Cinzel', serif;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  color: var(--hb-gold-deep);
+  margin-left: 5px;
+  padding: 1px 4px;
+  border: 1px solid rgba(212,175,80,0.3);
+  border-radius: 2px;
+  vertical-align: 2px;
+  white-space: nowrap;
+}
+.honours-section table.hb-champs td.hb-cell .hb-cval {
+  flex: 0 0 auto;
+  text-align: right;
+  font-family: 'Cinzel', serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--hb-gold-light);
+  white-space: nowrap;
+}
+.honours-section table.hb-champs td.hb-cell.hb-dim .hb-flex {
+  font-style: italic; opacity: 0.35; font-size: 13px;
+}
+.honours-section table.hb-champs tbody tr:nth-child(even) td {
+  background: rgba(212,175,80,0.025);
+}
+.honours-section table.hb-champs tbody tr.hb-era-row td {
+  background: rgba(212,175,80,0.08);
+  border-top: 1px solid rgba(212,175,80,0.30);
+  border-bottom: 1px solid rgba(212,175,80,0.30);
+}
+.honours-section table.hb-champs tbody tr.hb-era-row td.hb-year {
+  font-size: 12px; letter-spacing: 0.03em; line-height: 1.3;
+}
+
+/* Footer */
+.honours-section .hb-footer {
+  margin-top: 36px;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.35em;
+  color: var(--hb-gold-deep);
+  opacity: 0.7;
+  text-shadow: 0 1px 0 var(--hb-engraved);
+}
+.honours-section .hb-footer .hb-legend {
+  margin-top: 10px;
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  font-size: 12px;
+  text-transform: none;
+  color: var(--hb-gold);
+  opacity: 0.55;
+}
+
+/* ===== Tablet: 3 cols ===== */
+@media (max-width: 980px) {
+  .honours-section .hb-flow { column-count: 2; column-gap: 24px; }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 720px) {
+  .honours-section { padding: 50px 0 70px; }
+  .honours-section .honours-inner { padding: 0 14px; }
+  .honours-section .hb-pavilion { padding: 10px; border-width: 4px; }
+  .honours-section .hb-board { padding: 50px 16px 36px 16px; }
+  .honours-section .hb-plaque { width: 80%; padding: 10px 16px; margin: -60px auto 26px auto; }
+  .honours-section .hb-plaque h3 { font-size: 13px; letter-spacing: 0.22em; }
+  .honours-section .hb-flow { column-count: 1; column-gap: 16px; }
+  .honours-section .hb-entry { grid-template-columns: 36px minmax(0, 1.3fr) minmax(0, 1fr) 36px; gap: 6px; font-size: 12px; }
+  .honours-section .hb-entry .hb-year { font-size: 11px; }
+  .honours-section .hb-entry .hb-opp { font-size: 11px; }
+  .honours-section .hb-entry .hb-name { font-size: 12.5px; }
+  .honours-section .hb-entry .hb-val { font-size: 10px; }
+  .honours-section table.hb-champs { min-width: 1750px; }
+  .honours-section .honours-tab { padding: 10px 12px; font-size: 10px; letter-spacing: 0.12em; }
+}
+@media (max-width: 420px) {
+  .honours-section .hb-entry .hb-name { font-size: 11.5px; }
+  .honours-section .hb-entry .hb-opp { font-size: 10.5px; }
+}
+</style>
 </head>
 <body>
 
@@ -500,6 +848,7 @@
       <a href="#fixtures">Fixtures</a>
       <a href="#stats">Stats</a>
       <a href="#records">Records</a>
+      <a href="#honours">Honours</a>
       <a href="#about">About</a>
       <a href="#join">Join</a>
     </nav>
@@ -547,7 +896,7 @@
     <div class="numbers-grid">
 
       <div class="num-cell">
-        <div class="num-value">616</div>
+        <div class="num-value" id="numbers-nepos-count">616</div>
         <div>
           <div class="num-label">Nepos</div>
           <div class="num-sub">Unique players, 1980–present</div>
@@ -691,11 +1040,25 @@
     <div class="section-head">
       <div class="section-num dark">03 / Records &amp; History</div>
       <h2 class="section-title">46 years of <em>cricket & chaos.</em></h2>
-      <p style="color: var(--muted); margin-top: 12px; max-width: 640px;">Every Nepo of the Year, every Club Captain, the Non-League League (which we've somehow won every year since 1980), our world records, our best seasons, and the 512 souls who have pulled on the lime-green cap.</p>
+      <p style="color: var(--muted); margin-top: 12px; max-width: 640px;">Every Nepo of the Year, every Club Captain, the Non-League League (which we've somehow won every year since 1980), our world records, our best seasons, and the <span id="records-player-count">…</span> souls who have pulled on the lime-green cap.</p>
     </div>
 
     <div class="records-tabs" id="records-tabs"></div>
     <div id="records-content" class="records-content"></div>
+  </div>
+</section>
+
+<!-- ============ HONOURS BOARDS ============ -->
+<section id="honours" class="honours-section">
+  <div class="honours-inner">
+    <div class="section-head">
+      <div class="section-num dark">04 / Honours Boards</div>
+      <h2 class="section-title">The pavilion <em>walls.</em></h2>
+      <p style="color: var(--hb-gold); margin-top: 12px; max-width: 720px; opacity: 0.78;">Engraved in walnut and gold — every season's champion in each discipline, every century, every five-wicket haul. The trophy room of the Nepotists.</p>
+    </div>
+
+    <div class="honours-tabs" id="honours-tabs"></div>
+    <div id="honours-content" class="honours-content"></div>
   </div>
 </section>
 
@@ -723,7 +1086,7 @@
 <!-- ============ JOIN ============ -->
 <section id="join" class="join-section">
   <div class="join-inner">
-    <div class="section-num" style="color: var(--lime)">04 / Become a Nepo</div>
+    <div class="section-num" style="color: var(--lime)">05 / Become a Nepo</div>
     <h2 class="join-title" style="margin-top: 16px">All you need is a <em>sense of humour.</em></h2>
     <p class="join-lede">All kit provided. Play one game or the whole season. A message goes out each Monday — just reply by Wednesday 5pm with your availability.</p>
     <a href="mailto:nepotistscc@live.co.uk" class="btn btn-lime">Get in touch →</a>
@@ -5401,8 +5764,6 @@ const RECORDS_TABS = [
   {id:"nll", label:"Non-League League"},
   {id:"records", label:"World Records"},
   {id:"success", label:"Success Rate"},
-  {id:"centurions", label:"Centurions"},
-  {id:"fivewi", label:"5-Wicket Hauls"},
 ];
 
 const TABS = [
@@ -6140,6 +6501,347 @@ function renderMeta() {
   $("#meta-row").textContent = text;
 }
 
+// ========== HONOURS BOARDS ==========
+// Helper: title-case a single word with Mc/Mac awareness
+function hbTitleWord(w) {
+  if (!w) return w;
+  const wl = w.toLowerCase();
+  if (wl.startsWith('mc') && w.length >= 3 && /[a-z]/i.test(w[2])) {
+    return 'Mc' + w[2].toUpperCase() + wl.slice(3);
+  }
+  if (wl.startsWith('mac') && w.length >= 4 && /[a-z]/i.test(w[3])) {
+    if (w === w.toUpperCase()) return 'Mac' + w[3].toUpperCase() + wl.slice(4);
+  }
+  return w[0].toUpperCase() + wl.slice(1);
+}
+// Helper: smart-title respecting hyphens and apostrophes
+function hbSmartTitle(name) {
+  if (!name) return name;
+  return name.split(/(['\-])/).map(p => (p === "'" || p === '-') ? p : hbTitleWord(p)).join('');
+}
+// Helper: "SURNAME, Firstname" → "F. Surname"
+function hbLordsInitials(name) {
+  if (!name) return '';
+  const ix = name.indexOf(',');
+  if (ix < 0) return hbSmartTitle(name);
+  const last = hbSmartTitle(name.slice(0, ix).trim());
+  const first = name.slice(ix + 1).trim();
+  return first ? `${first[0].toUpperCase()}. ${last}` : last;
+}
+// Helper: build player → nationality lookup once, lazily
+let _hbNatLookup = null;
+function hbNatOf(player) {
+  if (_hbNatLookup === null) {
+    _hbNatLookup = new Map();
+    for (const sec of ['batting', 'bowling', 'fielding']) {
+      for (const yr of Object.keys(DATA[sec] || {})) {
+        for (const r of (DATA[sec][yr] || [])) {
+          if (r.p && r.n && !_hbNatLookup.has(r.p)) _hbNatLookup.set(r.p, r.n);
+        }
+      }
+    }
+  }
+  return _hbNatLookup.get(player) || '';
+}
+// Helper: parse a "Sun 03 May" date into a comparable order key
+const HB_MONTHS = {Jan:1,Feb:2,Mar:3,Apr:4,May:5,Jun:6,Jul:7,Aug:8,Sep:9,Oct:10,Nov:11,Dec:12};
+function hbFixtureOrder(d) {
+  if (!d) return 9999;
+  const m = d.match(/(\d+)\s+([A-Z][a-z]+)/);
+  if (!m) return 9999;
+  return (HB_MONTHS[m[2]] || 0) * 100 + parseInt(m[1], 10);
+}
+function hbFixtureOrderFor(yearStr, opponent) {
+  const fxs = DATA.fixtures[yearStr] || [];
+  for (const fx of fxs) if (fx.op === opponent) return hbFixtureOrder(fx.d);
+  return 9999;
+}
+// Helper: render a player name + nat bubble (for Season Champs cells)
+function hbFmtPlayer(p, n) {
+  if (!p) return '<span style="opacity:0.4;font-style:italic">—</span>';
+  const ix = p.indexOf(',');
+  let nameHtml;
+  if (ix > 0) {
+    const last = hbSmartTitle(p.slice(0, ix).trim());
+    const first = p.slice(ix + 1).trim();
+    nameHtml = first ? `${first} ${last}` : last;
+  } else {
+    nameHtml = hbSmartTitle(p);
+  }
+  const natTag = (n && n !== '?') ? `<span class="hb-nat">${n}</span>` : '';
+  return `<span class="hb-player-name">${nameHtml}</span>${natTag}`;
+}
+// Helper: format a season-champs winner cell value
+function hbFmtVal(w) {
+  if (!w) return '';
+  if (w.kind === 'avg')  return w.raw.toFixed(2);
+  if (w.kind === 'int')  return Math.round(w.raw).toLocaleString();
+  if (w.kind === 'hs')   return Math.round(w.raw) + (w.no ? '*' : '');
+  if (w.kind === 'figs') return Math.round(w.wk) + '/' + Math.round(w.r);
+  if (w.kind === 'field') {
+    const parts = [];
+    if (w.ct) parts.push(w.ct + 'c');
+    if (w.st) parts.push(w.st + 's');
+    if (w.ro) {
+      const ro = w.ro;
+      const roWhole = Math.floor(ro);
+      const roHalf = (ro - roWhole) > 0;
+      parts.push((roHalf && roWhole === 0 ? '½' : (roHalf ? roWhole + '½' : String(roWhole))) + 'ro');
+    }
+    return Math.round(w.dis) + ' (' + parts.join(' ') + ')';
+  }
+  return String(w.raw || '');
+}
+// Helper: build a season-champs <td> cell
+function hbCell(w) {
+  if (!w) return '<td class="hb-cell hb-dim"><div class="hb-flex"><span class="hb-player-block">—</span></div></td>';
+  const nameHtml = hbFmtPlayer(w.p, w.n);
+  const value = hbFmtVal(w);
+  return `<td class="hb-cell"><div class="hb-flex"><span class="hb-player-block">${nameHtml}</span><span class="hb-cval">${value}</span></div></td>`;
+}
+
+// ===== Compute season champions data from DATA =====
+function hbComputeSeasonChamps() {
+  const rows = [];
+  const yearKeys = Object.keys(DATA.batting).filter(k => /^\d{4}$/.test(k)).map(Number).sort((a,b) => a-b);
+  for (const y of yearKeys) {
+    const yk = String(y);
+    const batRows = (DATA.batting[yk] || []);
+    const qBat   = batRows.filter(r => r.q && r.ave != null);
+    const bowlRows = (DATA.bowling[yk] || []);
+    const qBowl  = bowlRows.filter(r => r.q && r.ave != null && r.wk > 0);
+    const fldRows = (DATA.fielding[yk] || []);
+    const seasonFiveWi = (typeof FIVE_WICKET_HAULS !== 'undefined' ? FIVE_WICKET_HAULS : []).filter(f => f.y === y);
+
+    const batAvg  = qBat.length ? (() => { const t = qBat.slice().sort((a,b) => b.ave - a.ave)[0]; return {p:t.p, n:t.n, kind:'avg', raw:t.ave}; })() : null;
+    const batRuns = batRows.length ? (() => { const t = batRows.slice().sort((a,b) => (b.runs||0) - (a.runs||0))[0]; if (!t.runs) return null; return {p:t.p, n:t.n, kind:'int', raw:t.runs}; })() : null;
+    const batHs   = batRows.length ? (() => { const t = batRows.slice().sort((a,b) => { const dh = (b.hs||0) - (a.hs||0); return dh!==0 ? dh : (b.hsNO?1:0) - (a.hsNO?1:0); })[0]; if (!t.hs) return null; return {p:t.p, n:t.n, kind:'hs', raw:t.hs, no:t.hsNO}; })() : null;
+    const bowlW   = bowlRows.length ? (() => { const t = bowlRows.slice().sort((a,b) => (b.wk||0) - (a.wk||0))[0]; if (!t.wk) return null; return {p:t.p, n:t.n, kind:'int', raw:t.wk}; })() : null;
+    const bowlA   = qBowl.length ? (() => { const t = qBowl.slice().sort((a,b) => a.ave - b.ave)[0]; return {p:t.p, n:t.n, kind:'avg', raw:t.ave}; })() : null;
+    const bowlF   = seasonFiveWi.length ? (() => { const t = seasonFiveWi.slice().sort((a,b) => { if (b.wk !== a.wk) return b.wk - a.wk; return a.r - b.r; })[0]; return {p:t.p, n:hbNatOf(t.p), kind:'figs', wk:t.wk, r:t.r}; })() : null;
+    const field   = fldRows.length ? (() => { const tagged = fldRows.map(r => Object.assign({}, r, {dis:(r.ct||0)+(r.st||0)+(r.ro||0)})); const t = tagged.slice().sort((a,b) => b.dis - a.dis)[0]; if (!t.dis) return null; return {p:t.p, n:t.n, kind:'field', dis:t.dis, ct:t.ct||0, st:t.st||0, ro:t.ro||0}; })() : null;
+
+    // Club Champion: cumulative points across batting, bowling, fielding
+    const playerPts = new Map();
+    for (const r of batRows) {
+      const dis = (r.inn||0) - (r.no||0);
+      const pts = y >= 2025 ? (r.runs||0) : (r.runs||0) - 7*dis;
+      playerPts.set(r.p, (playerPts.get(r.p) || 0) + pts);
+    }
+    for (const r of bowlRows) {
+      const pts = y >= 2025 ? 20*(r.wk||0) : 20*(r.wk||0) - (r.r||0)/5;
+      playerPts.set(r.p, (playerPts.get(r.p) || 0) + pts);
+    }
+    for (const r of fldRows) {
+      let pts;
+      if (y >= 2025) {
+        const ro = r.ro || 0;
+        const roWhole = Math.floor(ro);
+        const roHalf = (ro - roWhole) > 0 ? 1 : 0;
+        pts = 15*(r.st||0) + 10*(r.ct||0) + 10*roWhole + 5*roHalf;
+      } else { pts = r.pts || 0; }
+      playerPts.set(r.p, (playerPts.get(r.p) || 0) + pts);
+    }
+    const c = [...playerPts.entries()].sort((a,b) => b[1] - a[1])[0];
+    const champ = c ? {p:c[0], n:hbNatOf(c[0]), kind:'int', raw:Math.round(c[1])} : null;
+
+    rows.push({year:y, batAvg, batRuns, batHs, bowlW, bowlA, bowlF, field, champ});
+  }
+  return rows;
+}
+
+// ===== Render: Season Champions =====
+function renderSeasonChampsBoard(c) {
+  // Hardcoded era summary row 1980-1999
+  const era = {
+    yearLabel: '1980–1999',
+    batAvg:  {p:'JACKSON, Bruce', n:'AUS', kind:'avg', raw:54.66},
+    batRuns: {p:'JACKSON, Bruce', n:'AUS', kind:'int', raw:8693},
+    batHs:   {p:'JACKSON, Bruce', n:'AUS', kind:'hs',  raw:167, no:false},
+    bowlW:   {p:'BALDEN, Bruce',  n:'ENG', kind:'int', raw:514},
+    bowlA:   {p:'EXLEY, Mark',    n:'ENG', kind:'avg', raw:8.14},
+    bowlF:   null,
+    field:   null,
+    champ:   {p:'BALDEN, Bruce',  n:'ENG', kind:'int', raw:10090},
+  };
+
+  const rows = hbComputeSeasonChamps();
+  // Drop in-progress 2026
+  const visible = rows.filter(r => r.year !== 2026);
+
+  function buildRow(r, isEra) {
+    const yr = isEra ? era.yearLabel : String(r.year);
+    return `
+      <tr${isEra ? ' class="hb-era-row"' : ''}>
+        <td class="hb-year">${yr}</td>
+        ${hbCell(r.batRuns)}
+        ${hbCell(r.batAvg)}
+        ${hbCell(r.batHs)}
+        ${hbCell(r.bowlW)}
+        ${hbCell(r.bowlA)}
+        ${hbCell(r.bowlF)}
+        ${hbCell(r.field)}
+        ${hbCell(r.champ)}
+      </tr>`;
+  }
+
+  let body = buildRow(era, true);
+  for (const r of visible) body += buildRow(r, false);
+
+  c.innerHTML = `
+    <div class="hb-pavilion">
+      <div class="hb-board">
+        <div class="hb-plaque"><h3>NEPOTISTS · SEASON CHAMPIONS</h3></div>
+        <div class="hb-champ-wrap">
+          <table class="hb-champs">
+            <colgroup>
+              <col class="hb-c-year">
+              <col class="hb-c-bat"><col class="hb-c-bat"><col class="hb-c-bat">
+              <col class="hb-c-bowl"><col class="hb-c-bowl"><col class="hb-c-bowl">
+              <col class="hb-c-field">
+              <col class="hb-c-champ">
+            </colgroup>
+            <thead>
+              <tr class="hb-group-row">
+                <th></th>
+                <th colspan="3">BATTING</th>
+                <th colspan="3">BOWLING</th>
+                <th>FIELDING</th>
+                <th>CLUB CHAMPION</th>
+              </tr>
+              <tr class="hb-col-row">
+                <th>Season</th>
+                <th>Most Runs</th>
+                <th>Best Average</th>
+                <th>Highest Score</th>
+                <th>Most Wickets</th>
+                <th>Best Average</th>
+                <th>Best Figures</th>
+                <th>Most Dismissals</th>
+                <th>Top Points</th>
+              </tr>
+            </thead>
+            <tbody>${body}
+            </tbody>
+          </table>
+        </div>
+        <div class="hb-footer">
+          ·  THE GREATEST TEAM THE WORLD HAS EVER SEEN  ·
+          <div class="hb-legend">Era row aggregates 20 seasons (1980–1999) &nbsp;·&nbsp; Best Figures recorded only for 5-wicket hauls &nbsp;·&nbsp; 2026 reinstated at season end</div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ===== Render: Centuries (4-col, by year asc, year only on first row of run) =====
+function renderCenturiesBoard(c) {
+  // Build entries with order key
+  const entries = (typeof CENTURIONS !== 'undefined' ? CENTURIONS : [])
+    .map(c => Object.assign({}, c, {n: hbNatOf(c.p), ord: hbFixtureOrderFor(String(c.y), c.op)}));
+  // Group by year, sort by ord within
+  const byYear = {};
+  for (const e of entries) (byYear[e.y] = byYear[e.y] || []).push(e);
+  for (const y of Object.keys(byYear)) byYear[y].sort((a,b) => a.ord - b.ord);
+  // Flatten oldest first
+  const years = Object.keys(byYear).map(Number).sort((a,b) => a - b);
+  const flat = years.flatMap(y => byYear[y]);
+
+  let prevYear = null;
+  const rowsHtml = flat.map(e => {
+    const showYear = e.y !== prevYear;
+    prevYear = e.y;
+    const yearHtml = showYear ? String(e.y) : '';
+    const natHtml = (e.n && e.n !== '?') ? `<span class="hb-nat">${e.n}</span>` : '';
+    const name = hbLordsInitials(e.p);
+    const star = e.no ? '<span class="hb-star">*</span>' : '<span class="hb-star"></span>';
+    const opp = e.op || '—';
+    return `<div class="hb-entry"><span class="hb-year">${yearHtml}</span><span class="hb-name">${name}${natHtml}</span><span class="hb-opp">${opp}</span><span class="hb-val"><span class="hb-num">${e.r}</span>${star}</span></div>`;
+  }).join('\n      ');
+
+  c.innerHTML = `
+    <div class="hb-pavilion">
+      <div class="hb-board">
+        <div class="hb-plaque"><h3>NEPOTISTS · CENTURIES</h3></div>
+        <div class="hb-flow">
+          ${rowsHtml}
+        </div>
+        <div class="hb-footer">
+          ·  THE GREATEST TEAM THE WORLD HAS EVER SEEN  ·
+          <div class="hb-legend">* denotes not out</div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ===== Render: 5 Wickets in an Innings =====
+function renderFiveWiBoard(c) {
+  const entries = (typeof FIVE_WICKET_HAULS !== 'undefined' ? FIVE_WICKET_HAULS : [])
+    .map(f => Object.assign({}, f, {n: hbNatOf(f.p), ord: hbFixtureOrderFor(String(f.y), f.op)}));
+  const byYear = {};
+  for (const e of entries) (byYear[e.y] = byYear[e.y] || []).push(e);
+  for (const y of Object.keys(byYear)) byYear[y].sort((a,b) => a.ord - b.ord);
+  const years = Object.keys(byYear).map(Number).sort((a,b) => a - b);
+  const flat = years.flatMap(y => byYear[y]);
+
+  let prevYear = null;
+  const rowsHtml = flat.map(e => {
+    const showYear = e.y !== prevYear;
+    prevYear = e.y;
+    const yearHtml = showYear ? String(e.y) : '';
+    const natHtml = (e.n && e.n !== '?') ? `<span class="hb-nat">${e.n}</span>` : '';
+    const name = hbLordsInitials(e.p);
+    const figs = e.wk + '/' + e.r;
+    const opp = e.op || '—';
+    return `<div class="hb-entry"><span class="hb-year">${yearHtml}</span><span class="hb-name">${name}${natHtml}</span><span class="hb-opp">${opp}</span><span class="hb-val"><span class="hb-num">${figs}</span><span class="hb-star"></span></span></div>`;
+  }).join('\n      ');
+
+  c.innerHTML = `
+    <div class="hb-pavilion">
+      <div class="hb-board">
+        <div class="hb-plaque"><h3>NEPOTISTS · 5 WICKETS IN AN INNINGS</h3></div>
+        <div class="hb-flow">
+          ${rowsHtml}
+        </div>
+        <div class="hb-footer">
+          ·  THE GREATEST TEAM THE WORLD HAS EVER SEEN  ·
+          <div class="hb-legend">5 or more wickets in a single innings</div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ===== Tabs orchestration =====
+const HONOURS_TABS = [
+  {id:"champs",    label:"Season Champions"},
+  {id:"centuries", label:"Centuries"},
+  {id:"fivewi",    label:"5 Wickets in an Innings"},
+];
+let honoursTab = "champs";
+function renderHonoursTabs() {
+  const wrap = $("#honours-tabs");
+  if (!wrap) return;
+  wrap.innerHTML = "";
+  HONOURS_TABS.forEach(t => {
+    const b = el("button", {
+      class: "honours-tab" + (honoursTab === t.id ? " active" : ""),
+      onclick: () => { honoursTab = t.id; renderHonoursTabs(); renderHonoursContent(); }
+    });
+    b.textContent = t.label;
+    wrap.append(b);
+  });
+}
+function renderHonoursContent() {
+  const c = $("#honours-content");
+  if (!c) return;
+  c.innerHTML = "";
+  if (honoursTab === "champs")    renderSeasonChampsBoard(c);
+  else if (honoursTab === "centuries") renderCenturiesBoard(c);
+  else if (honoursTab === "fivewi")    renderFiveWiBoard(c);
+}
+
 // ---- RECORDS & HISTORY renderer ----
 let recordsTab = "nepo";
 
@@ -6165,8 +6867,6 @@ function renderRecordsContent() {
   else if (recordsTab === "nll") renderNLLTab(c);
   else if (recordsTab === "records") renderWorldRecordsTab(c);
   else if (recordsTab === "success") renderSuccessTab(c);
-  else if (recordsTab === "centurions") renderCenturionsTab(c);
-  else if (recordsTab === "fivewi") renderFiveWiTab(c);
 }
 
 function renderNepoTab(c) {
@@ -6764,12 +7464,32 @@ function renderTopCaps() {
   ).join("");
 }
 
+
+// Update dynamic player counts (Records intro + Numbers band Nepos cell)
+function updatePlayerCounts() {
+  const players = new Set();
+  for (const sec of ['batting','bowling','fielding']) {
+    for (const yr of Object.keys(DATA[sec]||{})) {
+      for (const r of (DATA[sec][yr]||[])) {
+        if (r.p) players.add(r.p);
+      }
+    }
+  }
+  const count = players.size;
+  const recEl = document.getElementById('records-player-count');
+  if (recEl) recEl.textContent = count;
+  const nepoEl = document.getElementById('numbers-nepos-count');
+  if (nepoEl) nepoEl.textContent = count;
+}
 // --- WIRE UP ---
 renderSeasons();
 renderNats();
 renderTabs();
 renderRecordsTabs();
 renderRecordsContent();
+renderHonoursTabs();
+renderHonoursContent();
+updatePlayerCounts();
 renderTopCaps();
 render2026Fixtures();
 render();
