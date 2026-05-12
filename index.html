@@ -1051,6 +1051,7 @@
       </div>
       <div class="qual-toggle" id="qual-toggle-wrap">
         <label><input type="checkbox" id="qual-only"> Qualified players only</label>
+        <label id="min-games-wrap" style="display:none;"><input type="checkbox" id="min-games"> <span id="min-games-label">Min 20 completed innings</span></label>
         <div id="scoring-wrap" style="display: none; margin-left: auto; align-items: center; gap: 10px;">
           <span class="f-label" style="margin:0;">Club Champion scoring</span>
           <div class="scoring-seg" role="tablist" aria-label="Scoring method">
@@ -5824,7 +5825,7 @@ const TABS = [
 ];
 
 // --- STATE ---
-const state = { season: 2026, tab: "batting", nat: "All", search: "", qualOnly: false, sortKey: "runs", sortDir: "desc", scoring: "historic" };
+const state = { season: 2026, tab: "batting", nat: "All", search: "", qualOnly: false, minGames: false, sortKey: "runs", sortDir: "desc", scoring: "historic" };
 
 // --- HELPERS ---
 const $ = s => document.querySelector(s);
@@ -6040,6 +6041,19 @@ function filterAndSort(rows) {
     .filter(r => !state.search || r.p.toLowerCase().includes(state.search.toLowerCase()))
     .filter(r => state.nat === "All" || r.n === state.nat)
     .filter(r => !state.qualOnly || r.q)
+    .filter(r => {
+      // Min-games filter applies only when "All Seasons" is selected.
+      // Batting: 20+ completed innings; Bowling: 100+ overs; Fielding/Champion: 20+ matches.
+      if (!state.minGames || state.season !== "all") return true;
+      if (state.tab === "batting") {
+        const dis = (r.inn || 0) - (r.no || 0);
+        return dis >= 20;
+      }
+      if (state.tab === "bowling") {
+        return (r.ov || 0) >= 100;
+      }
+      return (r.pl || 0) >= 20;
+    })
     .sort((a, b) => {
       const av = a[state.sortKey], bv = b[state.sortKey];
       if (av === undefined || av === null) return 1;
@@ -6083,10 +6097,21 @@ function renderTable() {
   const qualCheckbox = $("#qual-only").parentElement;  // label wrapping checkbox
   const scoringWrap = $("#scoring-wrap");
   const showQual = !isChampion && !isAllSeasons;
+  // Min-games toggle: only show when "All Seasons" is selected
+  const showMinGames = isAllSeasons;
+  const minGamesWrap = $("#min-games-wrap");
+  if (minGamesWrap) minGamesWrap.style.display = showMinGames ? "" : "none";
+  // Update label text per discipline (innings for batting, games for the rest)
+  const minGamesLabel = $("#min-games-label");
+  if (minGamesLabel) {
+    if (state.tab === "batting") minGamesLabel.textContent = "Min 20 completed innings";
+    else if (state.tab === "bowling") minGamesLabel.textContent = "Min 100 overs bowled";
+    else minGamesLabel.textContent = "Min 20 games played";
+  }
   const showScoring = isChampion;  // scoring toggle only relevant for Club Champion
   qualCheckbox.style.display = showQual ? "inline-flex" : "none";
   scoringWrap.style.display = showScoring ? "inline-flex" : "none";
-  $("#qual-toggle-wrap").style.display = (showQual || showScoring) ? "flex" : "none";
+  $("#qual-toggle-wrap").style.display = (showQual || showScoring || showMinGames) ? "flex" : "none";
 
   // Decide source data
   let data;
@@ -7642,6 +7667,7 @@ $("#season").addEventListener("change", e => { const v = e.target.value; state.s
 $("#nat").addEventListener("change", e => { state.nat = e.target.value; render(); });
 $("#search").addEventListener("input", e => { state.search = e.target.value; render(); });
 $("#qual-only").addEventListener("change", e => { state.qualOnly = e.target.checked; render(); });
+$("#min-games").addEventListener("change", e => { state.minGames = e.target.checked; render(); });
 document.querySelectorAll(".seg-btn[data-scoring]").forEach(btn => {
   btn.addEventListener("click", () => {
     state.scoring = btn.dataset.scoring;
