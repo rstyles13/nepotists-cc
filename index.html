@@ -312,6 +312,21 @@
     table.stats tbody tr.unqual { color: var(--muted); }
     table.stats td { padding: 10px 12px; }
     table.stats td.r { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; }
+    .stats td.rank-col, .stats th.rank-col {
+      width: 36px;
+      padding-left: 8px;
+      padding-right: 8px;
+      color: #6b6968;
+      font-weight: 500;
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+    }
+    .stats th.rank-col {
+      cursor: default;
+    }
+    .stats tr.unqual td.rank-col {
+      color: #4a4847;
+    }
     table.stats td.r.bold { font-weight: 600; }
     table.stats td.name { font-weight: 500; }
     table.stats td.nat-code { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
@@ -474,6 +489,9 @@
     h2.join-title em { font-style: italic; font-weight: 400; color: #f472b6; }
     .join-lede { color: #d6d3d1; font-size: 17px; max-width: 560px; margin: 0 auto 32px; }
     .btn-lime { background: var(--lime); color: var(--ink); font-weight: 500; display: inline-flex; align-items: center; gap: 8px; }
+    .join-cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 4px; }
+    @media (max-width: 540px) { .join-cta-row { flex-direction: column; align-items: stretch; } }
+
     .btn-lime:hover { background: #a3e635; }
 
     /* ---- FOOTER ---- */
@@ -1021,7 +1039,7 @@
     <div class="section-head">
       <div class="section-num">02 / Stats Explorer</div>
       <h2 class="section-title">Every run, every wicket,<br>every season.</h2>
-      <p class="data-caveat">Player stats span <strong>1980–2026</strong>. The 1980–1999 row aggregates each player's career figures from that era (per-season detail not yet digitised); 2000 onwards is per-season. 2026 in progress (3 of 26 games played at time of writing). <strong>Pl</strong> = matches played in the season (or career, when "All Seasons" is selected). <strong>Szn</strong> = number of distinct seasons appeared in.</p>
+      <p class="data-caveat">Player stats span <strong>1980–2026</strong>. The 1980–1999 row aggregates each player's career figures from that era (per-season detail not yet digitised); 2000 onwards is per-season. 2026 in progress (<span id="stats-2026-played">3</span> of <span id="stats-2026-total">26</span> games played at time of writing). <strong>Pl</strong> = matches played in the season (or career, when "All Seasons" is selected). <strong>Szn</strong> = number of distinct seasons appeared in.</p>
     </div>
 
     <!-- Filter bar -->
@@ -1122,8 +1140,11 @@
   <div class="join-inner">
     <div class="section-num" style="color: var(--lime)">05 / Become a Nepo</div>
     <h2 class="join-title" style="margin-top: 16px">All you need is a <em>sense of humour.</em></h2>
-    <p class="join-lede">All kit provided. Play one game or the whole season. A message goes out each Monday — just reply by Wednesday 5pm with your availability.</p>
-    <a href="mailto:nepotistscc@live.co.uk" class="btn btn-lime">Get in touch →</a>
+    <p class="join-lede">All kit provided. Play one game or the whole season. We use Spond to manage availability and selection each week — register for access and you'll see fixtures, reply with your availability, and get team news.</p>
+    <div class="join-cta-row">
+      <a href="https://spond.com/invite/LOKZL" target="_blank" rel="noopener" class="btn btn-lime">Join Spond →</a>
+      <a href="mailto:nepotistscc@live.co.uk" class="btn btn-outline">Get in touch</a>
+    </div>
 
     <div class="committee-block">
       <div class="section-num" style="color: var(--lime); margin-bottom: 12px">Committee</div>
@@ -6127,6 +6148,10 @@ function renderTable() {
   const table = el("table", { class: "stats" });
   const thead = el("thead");
   const tr = el("tr");
+  // Rank column header (non-sortable — reflects current sort order)
+  const rankTh = el("th", { class: "r rank-col" });
+  rankTh.textContent = "#";
+  tr.append(rankTh);
 
   if (state.tab === "champion") {
     tr.append(sortHeader("p", "Player", false), sortHeader("n", "Nat", false),
@@ -6140,7 +6165,7 @@ function renderTable() {
       sortHeader("pl", "Pl"));
     if (state.season === "all") tr.append(sortHeader("seasonCount", "Szn"));
     tr.append(sortHeader("inn", "Inn"), sortHeader("no", "NO"),
-      sortHeader("runs", "Runs"), sortHeader("hs", "HS"), sortHeader("ave", "Ave"),
+      sortHeader("runs", "Runs"), sortHeader("ave", "Ave"), sortHeader("hs", "HS"),
       sortHeader("f50", "50s"), sortHeader("f100", "100s"));
   } else if (state.tab === "bowling") {
     tr.append(sortHeader("p", "Player", false), sortHeader("n", "Nat", false),
@@ -6162,7 +6187,7 @@ function renderTable() {
   const tbody = el("tbody");
   if (rows.length === 0) {
     const allBonus = state.season === "all" ? 1 : 0;
-    const span = (state.tab === "bowling" ? 11 : state.tab === "batting" ? 10 : state.tab === "champion" ? 7 : 7) + allBonus;
+    const span = (state.tab === "bowling" ? 12 : state.tab === "batting" ? 11 : state.tab === "champion" ? 8 : 8) + allBonus;
     const empty = el("tr");
     empty.innerHTML = `<td colspan="${span}" class="no-results">No players match those filters.</td>`;
     tbody.append(empty);
@@ -6187,6 +6212,7 @@ function renderRow(r, i) {
     };
     const sznCell = state.season === "all" ? `<td class="r">${r.seasonCount || '–'}</td>` : '';
     tr.innerHTML = `
+      <td class="r rank-col">${i + 1}</td>
       <td class="name">${dot}${r.p}</td>
       <td class="nat-code">${r.n}</td>
       <td class="r">${r.pl || '–'}</td>
@@ -6199,6 +6225,7 @@ function renderRow(r, i) {
   } else if (state.tab === "batting") {
     const sznCell = state.season === "all" ? `<td class="r">${r.seasonCount || '–'}</td>` : '';
     tr.innerHTML = `
+      <td class="r rank-col">${i + 1}</td>
       <td class="name">${dot}${r.p}</td>
       <td class="nat-code">${r.n}</td>
       <td class="r">${r.pl}</td>
@@ -6206,14 +6233,15 @@ function renderRow(r, i) {
       <td class="r">${r.inn ?? '–'}</td>
       <td class="r">${r.no ?? '–'}</td>
       <td class="r bold">${r.runs ?? '–'}</td>
-      <td class="r">${r.hs ?? '–'}${r.hsNO ? '<span class="star-no">*</span>' : ''}</td>
       <td class="r bold">${r.ave != null ? r.ave.toFixed(1) : '–'}</td>
+      <td class="r">${r.hs ?? '–'}${r.hsNO ? '<span class="star-no">*</span>' : ''}</td>
       <td class="r">${r.f50 || '–'}</td>
       <td class="r">${r.f100 || '–'}</td>
     `;
   } else if (state.tab === "bowling") {
     const sznCell = state.season === "all" ? `<td class="r">${r.seasonCount || '–'}</td>` : '';
     tr.innerHTML = `
+      <td class="r rank-col">${i + 1}</td>
       <td class="name">${dot}${r.p}</td>
       <td class="nat-code">${r.n}</td>
       <td class="r">${r.pl}</td>
@@ -6230,6 +6258,7 @@ function renderRow(r, i) {
   } else {
     const sznCell = state.season === "all" ? `<td class="r">${r.seasonCount || '–'}</td>` : '';
     tr.innerHTML = `
+      <td class="r rank-col">${i + 1}</td>
       <td class="name">${dot}${r.p}</td>
       <td class="nat-code">${r.n}</td>
       <td class="r">${r.pl}</td>
@@ -6451,7 +6480,8 @@ function renderAwards(c, awardKey) {
           : filtered.map((r, i) => {
               const dot = i < 3 ? '<span class="pod-dot">●</span>' : '';
               return `<tr>
-                <td class="name">${dot}${r.p}</td>
+                <td class="r rank-col">${i + 1}</td>
+      <td class="name">${dot}${r.p}</td>
                 <td class="nat-code">${r.n}</td>
                 <td class="r bold">${r.wins}</td>
                 <td class="r">${r.seasons.size}</td>
@@ -7650,6 +7680,16 @@ function updatePlayerCounts() {
   const nepoEl = document.getElementById('numbers-nepos-count');
   if (nepoEl) nepoEl.textContent = count;
 }
+
+function updateGameCounts() {
+  const fx = (DATA.fixtures && DATA.fixtures[2026]) ? DATA.fixtures[2026] : [];
+  const played = fx.filter(f => ["Win", "Loss", "Draw", "Tie"].includes(f.res)).length;
+  const total = fx.length;
+  const pEl = document.getElementById("stats-2026-played");
+  const tEl = document.getElementById("stats-2026-total");
+  if (pEl) pEl.textContent = played;
+  if (tEl) tEl.textContent = total;
+}
 // --- WIRE UP ---
 renderSeasons();
 renderNats();
@@ -7659,6 +7699,7 @@ renderRecordsContent();
 renderHonoursTabs();
 renderHonoursContent();
 updatePlayerCounts();
+updateGameCounts();
 renderTopCaps();
 render2026Fixtures();
 render();
