@@ -3856,7 +3856,7 @@ const DATA = {
       {p:"STAMPER, Allan",n:"ENG",pl:2,ct:1,st:0,ro:0,pts:8},
     ],
     2009: [
-      {p:"WERREN, Steve",n:"AUS",pl:16,ct:15,st:2,ro:0,pts:144},
+      {p:"WERREN, Steve",n:"AUS",pl:15,ct:15,st:2,ro:0,pts:144},
       {p:"WALKER, Michael",n:"AUS",pl:9,ct:6,st:1,ro:0,pts:60},
       {p:"PHILLIPS, Tim",n:"?",pl:11,ct:5,st:2,ro:0,pts:64},
       {p:"ADAMS, Rhys",n:"?",pl:9,ct:5,st:0,ro:0,pts:50},
@@ -3880,7 +3880,7 @@ const DATA = {
       {p:"RUIZ, Adi",n:"?",pl:1,ct:1,st:0,ro:0,pts:10},
       {p:"CHHAGAN, Sandeep",n:"?",pl:1,ct:1,st:0,ro:0,pts:10},
       {p:"EGGLINGTON, Glen",n:"?",pl:1,ct:1,st:0,ro:0,pts:10},
-    ,{p:"VALLABH, Hemant",n:"IND",pl:1,ct:0,st:1,ro:0,pts:12}],
+    {p:"VALLABH, Hemant",n:"IND",pl:1,ct:0,st:1,ro:0,pts:12}],
     2010: [
       {p:"WERREN, Steve",n:"AUS",pl:15,ct:11,st:8,ro:0,pts:184},
       {p:"ELLEGARD, Chris",n:"NZ",pl:11,ct:7,st:0,ro:0,pts:70},
@@ -3920,7 +3920,7 @@ const DATA = {
       {p:"VARNEY, Paul",n:"AUS",pl:1,ct:1,st:0,ro:0,pts:10},
     ],
     2011: [
-      {p:"WERREN, Steve",n:"AUS",pl:19,ct:10,st:5,ro:0,pts:140},
+      {p:"WERREN, Steve",n:"AUS",pl:18,ct:10,st:5,ro:0,pts:140},
       {p:"THACKER, Nilesh",n:"IND",pl:15,ct:7,st:0,ro:0,pts:70},
       {p:"HOAR, Carl",n:"ENG",pl:18,ct:5,st:0,ro:0,pts:50},
       {p:"ELLEGARD, Chris",n:"NZ",pl:13,ct:5,st:0,ro:0,pts:50},
@@ -6186,29 +6186,19 @@ const SEASON_COUNT_OVERRIDES = {
   "WERREN, Steve": 27,  // 1999–present (era 1999 + 2000–2025 + 2010 Ashes Tour)
 };
 
-// Compute career caps per player: for each season the player appeared in any
-// section, take the max pl across batting/bowling/fielding rows; sum across seasons.
+// Compute career caps per player: games played comes solely from the batting
+// table's `pl` (single source of truth); sum across the selected seasons.
 function computeCareerCaps() {
-  // Respect the multi-select: when in "multi" mode, only count seasons in
-  // state.selectedSeasons. When state.season is a single year, only that
-  // year contributes. "all" includes everything.
+  // Games played is sourced solely from the batting table's `pl` value, which is
+  // the single source of truth: a player who appeared but did not bat still has
+  // pl >= 1 (with inn: 0). Summing batting `pl` across the selected seasons gives
+  // the games-played total. Respects the multi-select season filter.
   const result = new Map();
-  const allSeasons = new Set();
-  for (const sec of ["batting", "bowling", "fielding"]) {
-    Object.keys(DATA[sec] || {}).forEach(s => allSeasons.add(s));
-  }
-  for (const season of allSeasons) {
+  for (const season of Object.keys(DATA.batting || {})) {
     // Skip seasons not in current selection
     if (typeof isSeasonInSelection === "function" && !isSeasonInSelection(season)) continue;
-    const maxPlPerPlayer = new Map();
-    for (const sec of ["batting", "bowling", "fielding"]) {
-      for (const r of (DATA[sec][season] || [])) {
-        const cur = maxPlPerPlayer.get(r.p) || 0;
-        maxPlPerPlayer.set(r.p, Math.max(cur, r.pl || 0));
-      }
-    }
-    for (const [p, pl] of maxPlPerPlayer) {
-      result.set(p, (result.get(p) || 0) + pl);
+    for (const r of (DATA.batting[season] || [])) {
+      result.set(r.p, (result.get(r.p) || 0) + (r.pl || 0));
     }
   }
   return result;
@@ -6335,7 +6325,7 @@ function renderTable() {
     tr.append(sortHeader("p", "Player", false), sortHeader("n", "Nat", false),
       sortHeader("pl", "Pl"));
     if ((state.season === "all" || state.season === "multi")) tr.append(sortHeader("seasonCount", "Szn"));
-    tr.append(sortHeader("ov", "Ov"), sortHeader("m", "M"),
+    tr.append(sortHeader("inn", "Inn"), sortHeader("ov", "Ov"), sortHeader("m", "M"),
       sortHeader("r", "R"), sortHeader("wk", "Wk"), sortHeader("ec", "Econ"), sortHeader("sr", "SR"), sortHeader("ave", "Ave"),
       sortHeader("f5w", "5wi"));
   } else if (state.tab === "fielding") {
@@ -6351,7 +6341,7 @@ function renderTable() {
   const tbody = el("tbody");
   if (rows.length === 0) {
     const allBonus = (state.season === "all" || state.season === "multi") ? 1 : 0;
-    const span = (state.tab === "bowling" ? 12 : state.tab === "batting" ? 11 : state.tab === "champion" ? 8 : 8) + allBonus;
+    const span = (state.tab === "bowling" ? 13 : state.tab === "batting" ? 11 : state.tab === "champion" ? 8 : 8) + allBonus;
     const empty = el("tr");
     empty.innerHTML = `<td colspan="${span}" class="no-results">No players match those filters.</td>`;
     tbody.append(empty);
@@ -6410,6 +6400,7 @@ function renderRow(r, i) {
       <td class="nat-code">${r.n}</td>
       <td class="r">${r.pl}</td>
       ${sznCell}
+      <td class="r">${r.inn != null ? r.inn : '–'}</td>
       <td class="r">${r.ov != null ? r.ov.toFixed(1) : '–'}</td>
       <td class="r">${r.m ?? '–'}</td>
       <td class="r">${r.r ?? '–'}</td>
@@ -7951,24 +7942,13 @@ function renderTopCaps() {
   const container = document.getElementById("top-caps-list");
   if (!container) return;
   // Top caps in "By the Numbers" is ALWAYS all-time, regardless of season filter.
-  // Use a local all-seasons computation (do not call computeCareerCaps which
-  // respects state.selectedSeasons).
+  // Games played is sourced solely from the batting table's `pl` (single source
+  // of truth; bat-less appearances still carry pl >= 1). Sum across all seasons.
   const caps = (function() {
     const result = new Map();
-    const allSeasons = new Set();
-    for (const sec of ["batting", "bowling", "fielding"]) {
-      Object.keys(DATA[sec] || {}).forEach(s => allSeasons.add(s));
-    }
-    for (const season of allSeasons) {
-      const maxPlPerPlayer = new Map();
-      for (const sec of ["batting", "bowling", "fielding"]) {
-        for (const r of (DATA[sec][season] || [])) {
-          const cur = maxPlPerPlayer.get(r.p) || 0;
-          maxPlPerPlayer.set(r.p, Math.max(cur, r.pl || 0));
-        }
-      }
-      for (const [p, pl] of maxPlPerPlayer) {
-        result.set(p, (result.get(p) || 0) + pl);
+    for (const season of Object.keys(DATA.batting || {})) {
+      for (const r of (DATA.batting[season] || [])) {
+        result.set(r.p, (result.get(r.p) || 0) + (r.pl || 0));
       }
     }
     return result;
