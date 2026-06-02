@@ -1987,12 +1987,14 @@ function buildChampionRows(season) {
     const row = byKey.get(playerKey);
     if (row) row.pl += pl;
   }
-  // Add seasonCount derived property
+  // Add seasonCount derived property (canonical: total seasons played across ALL
+  // disciplines, so it is identical on every tab rather than per-discipline).
+  const careerSeasons = computeCareerSeasons();
   for (const row of byKey.values()) {
     if (SEASON_COUNT_OVERRIDES[row.p] !== undefined) {
       row.seasonCount = SEASON_COUNT_OVERRIDES[row.p];
     } else {
-      row.seasonCount = row.hasEra ? null : row.seasons.size;
+      row.seasonCount = careerSeasons.has(row.p) ? careerSeasons.get(row.p) : (row.hasEra ? null : row.seasons.size);
     }
     delete row.hasEra;
   }
@@ -2049,6 +2051,7 @@ function aggregate(discipline) {
     });
   });
   // Compute derived averages and set canonical Pl
+  const careerSeasonsAgg = computeCareerSeasons();
   const rows = [...byKey.values()];
   rows.forEach(a => {
     // Defensive: clear statsless if any real batting actually accumulated
@@ -2056,7 +2059,7 @@ function aggregate(discipline) {
     if (SEASON_COUNT_OVERRIDES[a.p] !== undefined) {
       a.seasonCount = SEASON_COUNT_OVERRIDES[a.p];
     } else {
-      a.seasonCount = a.hasEra ? null : a.seasons.size;
+      a.seasonCount = careerSeasonsAgg.has(a.p) ? careerSeasonsAgg.get(a.p) : (a.hasEra ? null : a.seasons.size);
     }
     delete a.seasons;
     delete a.hasEra;
@@ -2075,6 +2078,12 @@ function aggregate(discipline) {
 
 // Manual season-count overrides for crossover players whose actual years played
 // differ from what the era-block aggregation would compute.
+// Manual role classifications that take precedence over the auto-classifier.
+// Keyed by player id (same id used throughout the profile module).
+const ROLE_OVERRIDES = {
+  "DANN, Kye": "Bowler",  // manual: classed as a specialist bowler per club view
+};
+
 const SEASON_COUNT_OVERRIDES = {
   "WERREN, Steve": 27,  // 1999–present (era 1999 + 2000–2025 + 2010 Ashes Tour)
 };
@@ -2093,6 +2102,34 @@ function computeCareerCaps() {
     for (const r of (DATA.batting[season] || [])) {
       result.set(r.p, (result.get(r.p) || 0) + (r.pl || 0));
     }
+  }
+  return result;
+}
+
+// Canonical "seasons played" per player: distinct seasons the player appeared in
+// ANY discipline (batting/bowling/fielding). The "1980-1999" era bucket counts as
+// a single season-equivalent (era detail is not per-season). Respects the season
+// selection filter, identical in spirit to computeCareerCaps so the "Szn" column is
+// unified across all tabs rather than counting only the current discipline.
+function computeCareerSeasons() {
+  const bySeasonSets = new Map(); // player -> Set of season keys
+  for (const disc of ["batting", "bowling", "fielding"]) {
+    for (const season of Object.keys(DATA[disc] || {})) {
+      if (typeof isSeasonInSelection === "function" && !isSeasonInSelection(season)) continue;
+      for (const r of (DATA[disc][season] || [])) {
+        if (!r || !r.p) continue;
+        if (!bySeasonSets.has(r.p)) bySeasonSets.set(r.p, new Set());
+        bySeasonSets.get(r.p).add(season);
+      }
+    }
+  }
+  const result = new Map();
+  for (const [p, set] of bySeasonSets) {
+    // Preserve existing UX: if a player's ONLY appearances are in the pre-2000 era
+    // bucket (no per-season detail), show null/blank. Otherwise count distinct seasons,
+    // treating the era bucket as a single additional season-equivalent if present.
+    if (set.size === 1 && set.has("1980-1999")) { result.set(p, null); continue; }
+    result.set(p, set.size);
   }
   return result;
 }
@@ -4470,7 +4507,19 @@ const PER_INN = {"bat":{"CARTHEW, Tim":[[62,1,"Claygate","2000"],[46,0,"Hampton 
         '<div class="pp-table-scroll" id="pp-opp-table"></div>';
     }
 
-    var role = hasBowl && b.runs>=300 && bw.wk>=20 ? 'All-rounder' : (f.st>0?'Wicket-keeper':(hasBowl&&bw.wk>=(b.runs/15)?'Bowler':'Batter'));
+    var __bwBalls=(function(o){if(o==null||o==='')return 0;o=+o;var w=Math.floor(o);return w*6+Math.round((o-w)*10);})(bw.overs);
+    var __ovPerGame=pl.caps>0?(__bwBalls/6)/pl.caps:0;
+    var __batAve=(b.ave!=null?b.ave:0);
+    // All-rounder requires BOTH a genuine bowling workload (>=3 overs/game, not just career-accumulated
+    // wickets from a long career) AND a credible batting average (>=20), so frontline bowlers who bat at
+    // the tail (e.g. Rik Andrew, ave 9.5 / 550 wkts) are classed as Bowlers, and occasional bowlers who
+    // bat well (e.g. Jackson, 0.5 ov/game) stay Batsmen.
+    var role;
+    if (typeof ROLE_OVERRIDES !== 'undefined' && ROLE_OVERRIDES[pid]) {
+      role = ROLE_OVERRIDES[pid];
+    } else {
+      role = hasBowl && b.runs>=300 && bw.wk>=20 && __ovPerGame>=3 && __batAve>=20 ? 'All-rounder' : (f.st>=10?'Wicket-keeper':(hasBowl&&bw.wk>=(b.runs/15)?'Bowler':'Batter'));
+    }
     var flag=P.flagSvg(pl.nat);
     // Career milestones strip (compact headline numbers)
     var ms=[];
