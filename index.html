@@ -1911,6 +1911,22 @@ const TABS = [
 ];
 
 // --- STATE ---
+// Live qualification for the in-progress season (canonical Nepotists rules):
+//  Batting: dismissed 5+ times (inn − not-outs ≥ 5) OR (250+ runs AND 5+ innings).
+//  Bowling: 30+ overs (≥180 balls) AND bowled in 5+ matches.  Fielding: no qualification.
+// Completed seasons keep their stored q flags; the current season is computed so the
+// "Qualified players only" toggle and averages podiums stay correct as it fills out.
+(function applyCurrentSeasonQual() {
+  const YR = "2026";
+  (DATA.batting[YR] || []).forEach(e => {
+    e.q = ((e.inn - e.no) >= 5) || (e.runs >= 250 && e.inn >= 5);
+  });
+  (DATA.bowling[YR] || []).forEach(e => {
+    const o = Math.floor(e.ov), balls = o * 6 + Math.round((e.ov - o) * 10);
+    e.q = (balls >= 180) && (e.inn >= 5);
+  });
+})();
+
 const state = { season: 2026, tab: "batting", nat: "All", search: "", qualOnly: false, minGames: false, sortKey: "runs", sortDir: "desc", scoring: "historic", selectedSeasons: new Set(["2026"]) };
 
 // --- HELPERS ---
