@@ -2469,7 +2469,11 @@ function renderFootnote() {
       ? `<span style="color:var(--lime-muted)">● Career aggregated totals</span>`
       : `<span>Qualification: 30+ overs across 5+ matches</span>`;
   } else {
-    f.innerHTML = `<span>Points: stumping 12 · catch 8 · run-out 8 · shared 4</span>${allSeasons ? '<span style="color:var(--lime-muted)">● Career totals</span>' : ''}`;
+    const fldNew = state.season !== "all" && parseInt(state.season, 10) >= 2025;
+    const fldKey = fldNew
+      ? `Points: stumping 15 · catch 10 · run-out 10 · shared 5`
+      : `Points: stumping 12 · catch 8 · run-out 8 · shared 4`;
+    f.innerHTML = `<span>${fldKey}</span>${allSeasons ? '<span style="color:var(--lime-muted)">● Career totals — each season scored under the rules in force that year (fielding raised to 15/10/10 in 2025)</span>' : ''}`;
   }
   return f;
 }
