@@ -3703,7 +3703,7 @@ function renderSuccessTab(c) {
       <div class="record-group-head">Season-by-Season Ranking</div>
       <div style="overflow-x:auto">
       <table class="history">
-        <thead><tr><th class="r">#</th><th>Year</th><th>Captain</th><th class="r">Pld</th><th class="r">W</th><th class="r">L</th><th class="r">Dr</th><th>Rate</th></tr></thead>
+        <thead><tr><th class="r">#</th><th>Year</th><th>Captain</th><th class="r">Pld</th><th class="r">W</th><th class="r">L</th><th class="r">Dr</th><th class="r">T</th><th>Rate</th></tr></thead>
         <tbody>
           ${SUCCESS.map(s => `
             <tr>
@@ -3714,6 +3714,7 @@ function renderSuccessTab(c) {
               <td class="r" style="color:var(--lime-muted)">${s.w}</td>
               <td class="r" style="color:var(--pink)">${s.l}</td>
               <td class="r">${s.dr}</td>
+              <td class="r">${s.t}</td>
               <td><span class="rate-bar"><span class="rate-bar-fill" style="width:${s.rate}%"></span></span><span class="mono" style="font-size:12px">${s.rate.toFixed(1)}%</span></td>
             </tr>`).join("")}
         </tbody>
