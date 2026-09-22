@@ -1779,7 +1779,8 @@ const SUCCESS = [
   {rank:43,  y:2021, pld:18, w:7, l:10, dr:0, t:0, c:"Ryan Styles 9 + others", rate:41.2},
   {rank:44,  y:1990, pld:23, w:4, l:3, dr:15, t:1, c:"Jerry Mitchell", rate:39.9},
   {rank:45,  y:1998, pld:17, w:4, l:5, dr:8, t:0, c:"Carthew–Jackson–Stocks", rate:38.2},
-  {rank:46,  y:1985, pld:9, w:1, l:3, dr:5, t:0, c:"Peter Haley", rate:30.6},
+  {rank:null, y:2020, pld:5, w:4, l:1, dr:0, t:0, c:"Styles 2, Monk 1, McQuin 1, Gray 1", rate:80.0, dnq:true},
+  {rank:null, y:1985, pld:9, w:1, l:3, dr:5, t:0, c:"Peter Haley", rate:30.6, dnq:true},
 ];
 
 const SUCCESS_DECADES = [
@@ -4064,10 +4065,10 @@ function renderSuccessTab(c) {
         <thead><tr><th class="r">#</th><th>Year</th><th>Captain</th><th class="r">Pld</th><th class="r">W</th><th class="r">L</th><th class="r">Dr</th><th class="r">T</th><th>Rate</th></tr></thead>
         <tbody>
           ${SUCCESS.map(s => `
-            <tr>
-              <td class="r mono">${s.rank}</td>
+            <tr${s.dnq ? ' style="opacity:.55"' : ''}>
+              <td class="r mono">${s.dnq ? 'DNQ' : s.rank}</td>
               <td class="year">${s.y}</td>
-              <td class="name" style="font-size:13px">${s.c}</td>
+              <td class="name" style="font-size:13px">${s.c}${s.dnq ? ' <span style="font-style:italic">— did not qualify, fewer than 10 games played</span>' : ''}</td>
               <td class="r">${s.pld}</td>
               <td class="r" style="color:var(--lime-muted)">${s.w}</td>
               <td class="r" style="color:var(--pink)">${s.l}</td>
