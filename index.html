@@ -626,6 +626,9 @@
     @media (max-width: 540px) { .join-cta-row { flex-direction: column; align-items: stretch; } }
 
     .btn-lime:hover { background: #a3e635; }
+    .join-section .btn-outline { color: var(--bg); border-color: var(--bg); }
+    .join-section .btn-outline:hover { background: var(--bg); color: var(--ink); }
+    .join-cta-row { justify-content: center; }
 
     /* ---- FOOTER ---- */
     footer { background: var(--panel); border-top: 2px solid var(--ink); padding: 40px 24px; }
@@ -1357,6 +1360,22 @@
   })();
 </script>
 
+<!-- ============ 2027 PRE-SEASON TRAINING BANNER (auto-expires after last session) ============ -->
+<div id="training-banner" style="background:var(--ink);color:var(--bg);text-align:center;padding:10px 16px;font-size:14px;">
+  🏏 <strong>2027 pre-season training:</strong> Lord's Indoor Cricket Centre, 7pm — Tue 30 Mar, Tue 6 Apr &amp; Tue 13 Apr. New players welcome.
+  <a href="#join" style="color:var(--lime);text-decoration:underline;margin-left:8px;">Join us</a>
+</div>
+<script>
+  // Hides itself after the last pre-season session. Change TRAINING_BANNER_EXPIRES or delete this block + the div above.
+  (function(){
+    var TRAINING_BANNER_EXPIRES = new Date('2027-04-14');
+    if (new Date() >= TRAINING_BANNER_EXPIRES) {
+      var el = document.getElementById('training-banner');
+      if (el) el.remove();
+    }
+  })();
+</script>
+
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="hero-inner">
@@ -1477,9 +1496,9 @@
 <!-- ============ FIXTURES ============ -->
 <section id="fixtures" class="fixtures-section">
   <div class="section-head">
-    <div class="section-num dark">01 / 2026 Fixtures</div>
-    <h2 class="section-title">The season ahead.</h2>
-    <p style="color: var(--muted); margin-top: 12px; max-width: 640px;">Our 2026 season runs from <strong style="color:var(--ink)">19 April</strong> to <strong style="color:var(--ink)">19 September</strong> — 26 fixtures across London and the Home Counties. All matches are 40-over Sunday games, with Win/Loss results shown for completed fixtures and scorecards linked where available.</p>
+    <div class="section-num dark">01 / Fixtures</div>
+    <h2 class="section-title">2027 fixtures coming soon.</h2>
+    <p style="color: var(--muted); margin-top: 12px; max-width: 640px;">The 2027 fixture list will be announced here soon. In the meantime, here's how 2026 went: <strong style="color:var(--ink)">26 fixtures</strong> from 19 April to 19 September across London.</p>
   </div>
   <div id="fixtures-content"></div>
 </section>
@@ -1612,6 +1631,10 @@
       <a href="https://spond.com/invite/LOKZL" target="_blank" rel="noopener" class="btn btn-lime">Join Spond →</a>
       <a href="mailto:nepotistscc@live.co.uk" class="btn btn-outline">Get in touch</a>
     </div>
+    <p id="join-training" class="join-lede" style="margin-top:20px">🏏 <strong>2027 pre-season training</strong> is booked at Lord's Indoor Cricket Centre, 7pm on Tue 30 March, Tue 6 April and Tue 13 April — a good way to come and meet us before the season starts.</p>
+    <script>
+      (function(){ if (new Date() >= new Date('2027-04-14')) { var el = document.getElementById('join-training'); if (el) el.remove(); } })();
+    </script>
 
     <div class="committee-block">
       <div class="section-num" style="color: var(--lime); margin-bottom: 12px">Contact</div>
@@ -4277,8 +4300,15 @@ const EVENTS = {
     { d: "07 Aug",     t: "Steve Werren Invitational Golf Tournament", loc: "Studley Wood Golf Club", url: "https://www.studleywoodgolfclub.co.uk/", type: "golf" },
     { d: "08–09 Aug",  t: "Oxford Tour (ISIS Trophy)",             loc: "Queen's & Brasenose College Recreation Grounds", type: "cricket" },
     { d: "05 Dec",     t: "Annual AGM & Awards Dinner",            loc: "The Antelope, Belgravia",                        type: "social" }
+  ],
+  "2027": [
+    { d: "Tue 30 Mar", t: "Pre-season training · 7pm", loc: "Lord's Indoor Cricket Centre", type: "training" },
+    { d: "Tue 06 Apr", t: "Pre-season training · 7pm", loc: "Lord's Indoor Cricket Centre", type: "training" },
+    { d: "Tue 13 Apr", t: "Pre-season training · 7pm", loc: "Lord's Indoor Cricket Centre", type: "training" }
   ]
 };
+// Pre-season block hides itself after the last session
+const PRESEASON_2027_EXPIRES = new Date('2027-04-14');
 
 function render2026Fixtures() {
   const c = document.getElementById('fixtures-content');
@@ -4307,7 +4337,21 @@ function render2026Fixtures() {
       </div>
     </div>` : '';
 
+  const pre = (new Date() < PRESEASON_2027_EXPIRES) ? (EVENTS[2027] || []) : [];
+  const preHtml = pre.length ? `
+    <div class="events-block" style="margin-top:0;margin-bottom:36px">
+      <div class="events-label">Pre-season — 2027 indoor training</div>
+      <div class="events-list">
+        ${pre.map(e => `<div class="events-row">
+            <div class="ev-date">${e.d}</div>
+            <div class="ev-detail"><span class="ev-icon">🏏</span><span class="ev-title">${e.t}</span>${e.loc ? `<span class="ev-loc">${e.loc}</span>` : ''}</div>
+            <div class="ev-type cricket">Training</div>
+          </div>`).join('')}
+      </div>
+    </div>` : '';
+
   c.innerHTML = `
+    ${preHtml}
     <div class="fixtures-summary">
       <div class="cell"><div class="val">${fx.length}</div><div class="lbl">Fixtures</div></div>
       <div class="cell"><div class="val win">${wins}</div><div class="lbl">Wins</div></div>
